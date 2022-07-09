@@ -1,6 +1,6 @@
 ### Hi there 👋🙂
 
-![Metrics](https://metrics.lecoq.io/sanda0?template=classic&lines=1&people=1&stars=1&languages=1&base.indepth=false&base.hireable=false&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&stars.limit=4&people.limit=24&people.identicons=false&people.identicons.hide=false&people.size=28&people.types=followers%2C%20following&people.shuffle=false&config.timezone=Asia%2FColombo)
+<img src="/github-metrics.svg" alt="Metrics" width="100%">
 
 <!--
 **sanda0/sanda0** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
