@@ -28,7 +28,7 @@ jobs:
           user: sanda0
           template: classic
           base: header, activity, community, repositories, metadata
-          config_display: columns
+          config_display: large
           config_timezone: Asia/Colombo
           plugin_code: yes
           plugin_code_days: 3
