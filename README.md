@@ -1,5 +1,5 @@
 ### Hi there 👋🙂
-![](https://dcbadge.vercel.app/api/shield/901730905104728094)
+![](https://dcbadge.vercel.app/api/shield/901730905104728094?style=social)
 
 <img align="center" src="/github-metrics.svg" alt="Metrics" width="100%">
 <!--
