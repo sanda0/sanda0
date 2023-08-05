@@ -1,5 +1,4 @@
 <h1 align="center">Hi 👋, I'm sandakelum(sanda)</h1>
-<h3 align="center">just another human 😉</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=sanda0&label=Profile%20views&color=0e75b6&style=flat" alt="sanda0" /> </p>
 
