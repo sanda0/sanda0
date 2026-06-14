@@ -2,64 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sandakelum.me/projects/kashledger/</loc>
+    <loc>http://localhost:1313/projects/kashledger/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/projects/vps-pilot/</loc>
+    <loc>http://localhost:1313/projects/vps-pilot/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/projects/json2docs/</loc>
+    <loc>http://localhost:1313/projects/json2docs/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/posts/laravel-database-per-user/</loc>
+    <loc>http://localhost:1313/posts/laravel-database-per-user/</loc>
     <lastmod>2025-06-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-06-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-06-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/posts/audit-log-gorm/</loc>
+    <loc>http://localhost:1313/posts/audit-log-gorm/</loc>
     <lastmod>2025-05-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/posts/timescaledb-system-stats/</loc>
+    <loc>http://localhost:1313/posts/timescaledb-system-stats/</loc>
     <lastmod>2025-04-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/experience/</loc>
+    <loc>http://localhost:1313/experience/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/projects/</loc>
+    <loc>http://localhost:1313/gallery/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/skills/</loc>
+    <loc>http://localhost:1313/projects/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://sandakelum.me/tags/</loc>
+    <loc>http://localhost:1313/skills/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
