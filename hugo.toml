@@ -15,7 +15,7 @@ enableRobotsTXT = true
   phone = "+94 76 943 8974"
   github = "#"
   linkedin = "#"
-  medium = "#"
+  medium = "https://medium.com/@sandakelum"
   twitter = ""
 
 [markup.highlight]

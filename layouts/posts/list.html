@@ -28,7 +28,10 @@
   .post-item { border-bottom: 1px solid var(--border); padding-bottom: 20px; }
   .post-item:last-child { border-bottom: none; }
   .post-title { font-size: 1rem; font-weight: 600; }
-  .post-date { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+  .post-meta { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+  .post-date { font-size: 0.8rem; color: var(--muted); }
+  .post-source { font-size: 0.75rem; color: var(--accent); }
+  .error { color: var(--muted); font-size: 0.9rem; }
   footer { border-top: 1px solid var(--border); padding-top: 24px; color: var(--muted); font-size: 0.8rem; margin-top: 64px; }
 </style>
 </head>
@@ -40,12 +43,26 @@
   <h1>writing</h1>
 
   <div class="post-list">
-    {{ range .Pages.ByDate.Reverse }}
-    <div class="post-item">
-      <div class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-      <div class="post-date">{{ .Date.Format "January 2, 2006" }}</div>
-    </div>
-    {{ end }}
+    {{- $feedURL := "https://medium.com/feed/@sandakelum" -}}
+    {{- $result := try (resources.GetRemote $feedURL) -}}
+    {{- if $result.Err -}}
+      <p class="error">Could not load articles from Medium.</p>
+    {{- else -}}
+      {{- $feed := $result.Value | transform.Unmarshal -}}
+      {{- range $feed.channel.item -}}
+      {{- $p := strings.Split .pubDate " " -}}
+      {{- $displayDate := printf "%s %s %s" (index $p 1) (index $p 2) (index $p 3) -}}
+      <div class="post-item">
+        <div class="post-title">
+          <a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>
+        </div>
+        <div class="post-meta">
+          <span class="post-date">{{ $displayDate }}</span>
+          <span class="post-source">medium ↗</span>
+        </div>
+      </div>
+      {{- end -}}
+    {{- end -}}
   </div>
 
   <footer>
