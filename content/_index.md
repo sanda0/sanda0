@@ -76,8 +76,4 @@ skills:
   - "Multi-tenancy"
   - "Audit Logging"
 
-education:
-  - degree: "Bachelor of Information and Communication Technology (Hons)"
-    institution: "Asia e University, Kuala Lumpur, Malaysia"
-    period: "2022 – present"
 ---
