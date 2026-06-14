@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on Sandakelum Priyamantha — Problem solver</title>
+		<link>https://sandakelum.me/posts/</link>
+		<description>Recent content in Posts on Sandakelum Priyamantha — Problem solver</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 01 Jun 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://sandakelum.me/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>How I Converted My Laravel App to Use a Database Per User</title>
+				<link>https://sandakelum.me/posts/laravel-database-per-user/</link>
+				<pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+				<guid>https://sandakelum.me/posts/laravel-database-per-user/</guid>
+				<description>&lt;p&gt;Coming soon.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Audit Log Systems in Go Using GORM Plugins</title>
+				<link>https://sandakelum.me/posts/audit-log-gorm/</link>
+				<pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+				<guid>https://sandakelum.me/posts/audit-log-gorm/</guid>
+				<description>&lt;p&gt;Coming soon.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Saving System Stat Data in PostgreSQL Using TimescaleDB</title>
+				<link>https://sandakelum.me/posts/timescaledb-system-stats/</link>
+				<pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
+				<guid>https://sandakelum.me/posts/timescaledb-system-stats/</guid>
+				<description>&lt;p&gt;Coming soon.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

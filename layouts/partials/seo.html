@@ -1,0 +1,21 @@
+{{- $title := .Title -}}
+{{- $desc := .Params.description | default .Site.Params.description -}}
+{{- $url := .Permalink -}}
+{{- $author := .Site.Params.author -}}
+
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ $author }}">
+<link rel="canonical" href="{{ $url }}">
+
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ $url }}">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+{{- with .Site.Params.twitter }}
+<meta name="twitter:site" content="@{{ . }}">
+{{- end }}

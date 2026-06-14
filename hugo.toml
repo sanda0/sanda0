@@ -1,0 +1,22 @@
+baseURL = 'https://sandakelum.me/'
+locale = 'en-us'
+title = 'Sandakelum Priyamantha — Problem solver'
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.5
+
+[params]
+  tagline = "Senior Software Engineer — high-performance backend systems & browser-to-OS integration."
+  description = "Senior Software Engineer with 4+ years of experience in high-performance backend systems, browser-to-OS integration, C++, Go, PHP/Laravel, and TypeScript."
+  author = "Sandakelum Priyamantha"
+  email = "sandakelum.work@gmail.com"
+  phone = "+94 76 943 8974"
+  github = "#"
+  linkedin = "#"
+  medium = "#"
+  twitter = ""
+
+[markup.highlight]
+  style = "github-dark"

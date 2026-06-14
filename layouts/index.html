@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ .Site.Title }}</title>
+{{ partial "seo.html" . }}
+<style>
+  :root {
+    --bg: #0d0f12;
+    --surface: #15181d;
+    --text: #e6e6e6;
+    --muted: #8b939e;
+    --accent: #7ee787;
+    --border: #232830;
+    --mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  header { margin-bottom: 56px; }
+
+  .prompt {
+    color: var(--accent);
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .tagline {
+    color: var(--muted);
+    margin-top: 8px;
+    font-size: 0.95rem;
+  }
+
+  nav {
+    margin-top: 24px;
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+  }
+
+  nav a { color: var(--muted); }
+  nav a:hover { color: var(--accent); text-decoration: none; }
+
+  section { margin-bottom: 56px; }
+
+  h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  h2::before {
+    content: "// ";
+    color: var(--accent);
+  }
+
+  p { color: #c9ccd1; max-width: 60ch; }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .project {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 6px;
+    padding: 20px;
+    transition: border-color 0.15s ease;
+  }
+
+  .project:hover { border-color: var(--accent); }
+
+  .project-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .project-title h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .project-tags {
+    font-size: 0.78rem;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .project p {
+    margin-top: 8px;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  .project-links {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    display: flex;
+    gap: 16px;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.95rem;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 40px 18px 64px; }
+    h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="prompt">$ whoami</div>
+    <h1>Sandakelum Priyamantha</h1>
+    <p class="tagline">{{ .Site.Params.tagline }}</p>
+    <nav>
+      <a href="#experience">experience</a>
+      <a href="/projects/">projects</a>
+      <a href="#skills">skills</a>
+      <a href="/posts/">writing</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>about</h2>
+    <p>{{ .Params.about }}</p>
+  </section>
+
+  <section id="experience">
+    <h2>experience</h2>
+    <div class="projects">
+      {{ range .Params.experience }}
+      <div class="project">
+        <div class="project-title">
+          <h3>{{ .title }} — {{ if .company_url }}<a href="{{ .company_url }}" target="_blank" rel="noopener">{{ .company }}</a>{{ else }}{{ .company }}{{ end }}</h3>
+          <span class="project-tags">{{ .period }}</span>
+        </div>
+        <p>{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>projects</h2>
+    <p><a href="/projects/">view all projects →</a></p>
+  </section>
+
+  <section id="skills">
+    <h2>skills</h2>
+    <div class="skills-list">
+      {{ range .Params.skills }}
+      <span class="skill">{{ . }}</span>
+      {{ end }}
+    </div>
+  </section>
+
+  <section id="writing">
+    <h2>writing</h2>
+    <p><a href="/posts/">view all posts →</a></p>
+  </section>
+
+  <section id="education">
+    <h2>education</h2>
+    <div class="projects">
+      {{ range .Params.education }}
+      <div class="project">
+        <div class="project-title">
+          <h3>{{ .degree }}</h3>
+          <span class="project-tags">{{ .period }}</span>
+        </div>
+        <p>{{ .institution }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>contact</h2>
+    <div class="contact-list">
+      <div>email: <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></div>
+      <div>phone: {{ .Site.Params.phone }}</div>
+      <div>github: <a href="{{ .Site.Params.github }}">github</a></div>
+      <div>linkedin: <a href="{{ .Site.Params.linkedin }}">linkedin</a></div>
+      <div>medium: <a href="{{ .Site.Params.medium }}">medium</a></div>
+    </div>
+  </section>
+
+  <footer>
+    built with hugo — &copy; {{ now.Format "2006" }} Sandakelum
+  </footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ .Site.Params.author }}",
+  "url": "{{ .Site.BaseURL }}",
+  "email": "{{ .Site.Params.email }}",
+  "jobTitle": "Senior Software Engineer",
+  "description": "{{ .Site.Params.description }}",
+  "sameAs": [
+    "{{ .Site.Params.github }}",
+    "{{ .Site.Params.linkedin }}",
+    "{{ .Site.Params.medium }}"
+  ]
+}
+</script>
+</body>
+</html>

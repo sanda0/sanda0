@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ .Title }} — Sandakelum</title>
+{{ partial "seo.html" . }}
+<style>
+  :root {
+    --bg: #0d0f12;
+    --surface: #15181d;
+    --text: #e6e6e6;
+    --muted: #8b939e;
+    --accent: #7ee787;
+    --border: #232830;
+    --mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--mono); line-height: 1.7; font-size: 16px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .back { font-size: 0.85rem; color: var(--muted); margin-bottom: 40px; display: block; }
+  .back:hover { color: var(--accent); text-decoration: none; }
+  h1 { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
+  .meta { color: var(--accent); font-size: 0.85rem; margin-bottom: 16px; }
+  .links { display: flex; gap: 16px; font-size: 0.9rem; margin-bottom: 40px; }
+  .content { color: #c9ccd1; }
+  .content p { max-width: 65ch; margin-bottom: 1.2em; }
+  .content h2 { color: var(--accent); margin: 2em 0 0.6em; font-size: 1rem; }
+  .content h3 { color: var(--text); margin: 1.5em 0 0.4em; font-size: 0.95rem; }
+  .content code { background: var(--surface); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-size: 0.9em; }
+  .content pre { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 16px; overflow-x: auto; margin-bottom: 1.2em; }
+  .content pre code { background: none; border: none; padding: 0; }
+  footer { border-top: 1px solid var(--border); padding-top: 24px; color: var(--muted); font-size: 0.8rem; margin-top: 64px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a href="/projects/" class="back">← projects</a>
+
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.tags_display }}<div class="meta">{{ . }}</div>{{ end }}
+  {{ if .Params.links }}
+  <div class="links">
+    {{ range .Params.links }}
+    <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+
+  <footer>
+    built with hugo — &copy; {{ now.Format "2006" }} Sandakelum
+  </footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ .Title }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}",
+    "url": "{{ .Site.BaseURL }}"
+  },
+  "url": "{{ .Permalink }}"
+}
+</script>
+</body>
+</html>
