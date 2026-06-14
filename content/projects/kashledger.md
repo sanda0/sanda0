@@ -2,8 +2,8 @@
 title: "KashLedger Accounting System"
 tags_display: "laravel · react · ts · mysql"
 links:
-  - label: "kashledger.com"
-    url: "https://kashledger.com"
+  - label: ""
+    url: ""
 weight: 1
 ---
 
