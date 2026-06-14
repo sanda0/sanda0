@@ -8,19 +8,18 @@ experience:
     company_url: "https://codimite.com"
     period: "jun 2026 – present"
     description: >
-      Leading development on enterprise browser-extension infrastructure with Native
-      Messaging Hosts. Engineering Chrome extensions that bypass browser sandboxing to
-      establish secure OS-to-web communication, and building high-security bridges for
-      enterprise browser-based tools.
+      Leading development on enterprise browser-extension infrastructure and OS-level
+      integration components. Building secure communication layers between desktop
+      environments and web applications for enterprise clients.
 
   - title: "Software Engineer"
     company: "Codimite"
     company_url: "https://codimite.com"
     period: "aug 2025 – jun 2026"
     description: >
-      Engineered specialized Chrome extensions utilizing Native Messaging Hosts to bypass
-      browser sandboxing, establishing secure communication between the OS and web
-      applications. Developed high-security bridges for enterprise-level browser-based tools.
+      Developed enterprise-grade browser extensions and low-level system integration
+      components. Established secure communication channels between desktop environments
+      and web applications for enterprise-level tooling.
 
   - title: "Software Engineer"
     company: "PramixIT Solutions"
