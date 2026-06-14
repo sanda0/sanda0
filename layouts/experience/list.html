@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — Sandakelum</title>
+{{ partial "seo.html" . }}
+<style>
+  :root {
+    --bg: #0d0f12;
+    --surface: #15181d;
+    --text: #e6e6e6;
+    --muted: #8b939e;
+    --accent: #7ee787;
+    --border: #232830;
+    --mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--mono); line-height: 1.6; font-size: 16px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .back { font-size: 0.85rem; color: var(--muted); margin-bottom: 40px; display: block; }
+  .back:hover { color: var(--accent); text-decoration: none; }
+  h1 { font-size: 1.4rem; font-weight: 600; margin-bottom: 32px; }
+  h1::before { content: "// "; color: var(--accent); }
+  .list { display: flex; flex-direction: column; gap: 16px; }
+  .item { border: 1px solid var(--border); background: var(--surface); border-radius: 6px; padding: 20px; }
+  .item-header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .item-title { font-size: 1rem; font-weight: 600; }
+  .item-period { font-size: 0.8rem; color: var(--accent); white-space: nowrap; }
+  .item-company { font-size: 0.88rem; color: var(--muted); margin-top: 4px; }
+  .item-desc { font-size: 0.9rem; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+  footer { border-top: 1px solid var(--border); padding-top: 24px; color: var(--muted); font-size: 0.8rem; margin-top: 64px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a href="/" class="back">← sandakelum.me</a>
+
+  <h1>experience</h1>
+
+  <div class="list">
+    {{ range .Params.experience }}
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">{{ .title }}</span>
+        <span class="item-period">{{ .period }}</span>
+      </div>
+      <div class="item-company">
+        {{ if .company_url }}<a href="{{ .company_url }}" target="_blank" rel="noopener">{{ .company }}</a>{{ else }}{{ .company }}{{ end }}
+      </div>
+      <p class="item-desc">{{ .description }}</p>
+    </div>
+    {{ end }}
+  </div>
+
+  <footer>
+    built with hugo — &copy; {{ now.Format "2006" }} Sandakelum
+  </footer>
+
+</div>
+</body>
+</html>

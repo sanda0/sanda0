@@ -1,0 +1,25 @@
+---
+title: "Skills"
+description: "Technical skills and tools used by Sandakelum Priyamantha."
+
+skills:
+  - "Go"
+  - "PHP / Laravel"
+  - "TypeScript / JavaScript"
+  - "Python"
+  - "C++"
+  - "Gin / Echo / Fiber"
+  - "Django"
+  - "React / Vue.js"
+  - "Tailwind CSS"
+  - "Chrome Extensions"
+  - "PostgreSQL / TimescaleDB"
+  - "MySQL / MongoDB / SQLite"
+  - "Docker"
+  - "CI/CD"
+  - "Nginx"
+  - "Linux"
+  - "REST / GraphQL / gRPC / WebSockets"
+  - "Multi-tenancy"
+  - "Audit Logging"
+---

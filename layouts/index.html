@@ -84,74 +84,8 @@
 
   p { color: #c9ccd1; max-width: 60ch; }
 
-  .projects {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .project {
-    border: 1px solid var(--border);
-    background: var(--surface);
-    border-radius: 6px;
-    padding: 20px;
-    transition: border-color 0.15s ease;
-  }
-
-  .project:hover { border-color: var(--accent); }
-
-  .project-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .project-title h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-  }
-
-  .project-tags {
-    font-size: 0.78rem;
-    color: var(--accent);
-    white-space: nowrap;
-  }
-
-  .project p {
-    margin-top: 8px;
-    font-size: 0.92rem;
-    color: var(--muted);
-  }
-
-  .project-links {
-    margin-top: 12px;
-    font-size: 0.85rem;
-    display: flex;
-    gap: 16px;
-  }
-
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .skill {
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 4px 10px;
-    font-size: 0.82rem;
-    color: var(--muted);
-  }
-
-  .contact-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 0.95rem;
-  }
+  .skills-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .skill { border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--muted); }
 
   footer {
     border-top: 1px solid var(--border);
@@ -174,11 +108,10 @@
     <h1>Sandakelum Priyamantha</h1>
     <p class="tagline">{{ .Site.Params.tagline }}</p>
     <nav>
-      <a href="#experience">experience</a>
+      <a href="/experience/">experience</a>
       <a href="/projects/">projects</a>
-      <a href="#skills">skills</a>
       <a href="/posts/">writing</a>
-      <a href="#contact">contact</a>
+      <a href="/contact/">contact</a>
     </nav>
   </header>
 
@@ -187,63 +120,12 @@
     <p>{{ .Params.about }}</p>
   </section>
 
-  <section id="experience">
-    <h2>experience</h2>
-    <div class="projects">
-      {{ range .Params.experience }}
-      <div class="project">
-        <div class="project-title">
-          <h3>{{ .title }} — {{ if .company_url }}<a href="{{ .company_url }}" target="_blank" rel="noopener">{{ .company }}</a>{{ else }}{{ .company }}{{ end }}</h3>
-          <span class="project-tags">{{ .period }}</span>
-        </div>
-        <p>{{ .description }}</p>
-      </div>
-      {{ end }}
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>projects</h2>
-    <p><a href="/projects/">view all projects →</a></p>
-  </section>
-
   <section id="skills">
     <h2>skills</h2>
     <div class="skills-list">
       {{ range .Params.skills }}
       <span class="skill">{{ . }}</span>
       {{ end }}
-    </div>
-  </section>
-
-  <section id="writing">
-    <h2>writing</h2>
-    <p><a href="/posts/">view all posts →</a></p>
-  </section>
-
-  <!-- <section id="education">
-    <h2>education</h2>
-    <div class="projects">
-      {{ range .Params.education }}
-      <div class="project">
-        <div class="project-title">
-          <h3>{{ .degree }}</h3>
-          <span class="project-tags">{{ .period }}</span>
-        </div>
-        <p>{{ .institution }}</p>
-      </div>
-      {{ end }}
-    </div>
-  </section> -->
-
-  <section id="contact">
-    <h2>contact</h2>
-    <div class="contact-list">
-      <div>email: <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></div>
-      <div>phone: {{ .Site.Params.phone }}</div>
-      <div>github: <a href="{{ .Site.Params.github }}">github</a></div>
-      <div>linkedin: <a href="{{ .Site.Params.linkedin }}">linkedin</a></div>
-      <div>medium: <a href="{{ .Site.Params.medium }}">medium</a></div>
     </div>
   </section>
 

@@ -28,7 +28,8 @@
   .post-item { border-bottom: 1px solid var(--border); padding-bottom: 20px; }
   .post-item:last-child { border-bottom: none; }
   .post-title { font-size: 1rem; font-weight: 600; }
-  .post-meta { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
+  .post-excerpt { font-size: 0.875rem; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+  .post-meta { display: flex; align-items: center; gap: 12px; margin-top: 6px; }
   .post-date { font-size: 0.8rem; color: var(--muted); }
   .post-source { font-size: 0.75rem; color: var(--accent); }
   .error { color: var(--muted); font-size: 0.9rem; }
@@ -56,6 +57,10 @@
         <div class="post-title">
           <a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>
         </div>
+        {{- $excerpt := .encoded | plainify | truncate 200 -}}
+        {{- with $excerpt -}}
+        <p class="post-excerpt">{{ . }}</p>
+        {{- end -}}
         <div class="post-meta">
           <span class="post-date">{{ $displayDate }}</span>
           <span class="post-source">medium ↗</span>
