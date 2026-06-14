@@ -133,7 +133,7 @@
 <body>
 <div class="wrap">
 
-  <a href="/" class="back">← sandakelum.me</a>
+  <a href="{{ "/" | relURL }}" class="back">← sandakelum.me</a>
 
   <h1>gallery</h1>
 
@@ -146,8 +146,8 @@
   <div class="gallery-grid" id="gallery">
     {{ range .Params.photos }}
     <div class="gallery-item" data-category="{{ .category }}"
-         onclick="openLightbox('/images/gallery/{{ .file }}', '{{ .location }}', '{{ .caption }}')">
-      <img src="/images/gallery/{{ .file }}"
+         onclick="openLightbox('{{ printf "images/gallery/%s" .file | relURL }}', '{{ .location }}', '{{ .caption }}')">
+      <img src="{{ printf "images/gallery/%s" .file | relURL }}"
            alt="{{ if .location }}{{ .location }}{{ else }}{{ .caption }}{{ end }}"
            loading="lazy">
       <div class="gallery-overlay">

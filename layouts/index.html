@@ -108,11 +108,11 @@
     <h1>Sandakelum Priyamantha</h1>
     <p class="tagline">{{ .Site.Params.tagline }}</p>
     <nav>
-      <a href="/experience/">experience</a>
-      <a href="/projects/">projects</a>
-      <a href="/posts/">writing</a>
-      <a href="/gallery/">gallery</a>
-      <a href="/contact/">contact</a>
+      <a href="{{ "experience/" | relURL }}">experience</a>
+      <a href="{{ "projects/" | relURL }}">projects</a>
+      <a href="{{ "posts/" | relURL }}">writing</a>
+      <a href="{{ "gallery/" | relURL }}">gallery</a>
+      <a href="{{ "contact/" | relURL }}">contact</a>
     </nav>
   </header>
 
