@@ -1,6 +1,6 @@
 ---
 title: "Experience"
-description: "Work history and career progression of Sandakelum Priyamantha."
+description: "Where I've worked and what I've built."
 
 experience:
   - title: "Senior Software Engineer L1"

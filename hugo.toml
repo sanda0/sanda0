@@ -9,7 +9,7 @@ enableRobotsTXT = true
 
 [params]
   tagline = "Senior Software Engineer — high-performance backend systems & browser-to-OS integration."
-  description = "Senior Software Engineer with 4+ years of experience in high-performance backend systems, browser-to-OS integration, C++, Go, PHP/Laravel, and TypeScript."
+  description = "Software Engineer with 4+ years of experience in high-performance backend systems, IPC/RPC integrations, C++, Go, PHP/Laravel, and TypeScript."
   author = "Sandakelum Priyamantha"
   email = "sandakelum.work@gmail.com"
   phone = "+94 76 943 8974"

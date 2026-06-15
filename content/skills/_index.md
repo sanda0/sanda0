@@ -1,6 +1,6 @@
 ---
 title: "Skills"
-description: "Technical skills and tools used by Sandakelum Priyamantha."
+description: "Tools and technologies I work with."
 
 skills:
   - "Go"

@@ -1,12 +1,11 @@
 ---
 title: "Sandakelum Priyamantha — Problem solver"
-description: "Senior Software Engineer with 4+ years of experience in high-performance backend systems, browser-to-OS integration, C++, Go, PHP/Laravel, and TypeScript."
+description: "Software Engineer with 4+ years of experience in high-performance backend systems, IPC/RPC integrations, C++, Go, PHP/Laravel, and TypeScript."
 
 about: >
-  Software Engineer with 4+ years of experience specializing in high-performance backend
-  systems and browser-to-OS integration. Proficient in developing secure Native Messaging
-  Hosts for IPC/RPC between web environments and operating systems. Experienced with C++, Go,
-  PHP (Laravel), and TypeScript, with a track record of architecting multi-tenant
+  Software Engineer with 4+ years of experience building high-performance backend systems
+  and IPC/RPC integrations between web environments and operating systems. Experienced with
+  C++, Go, PHP (Laravel), and TypeScript, with a track record of architecting multi-tenant
   applications, real-time monitoring tools, and scalable REST/GraphQL APIs.
 
 skills:

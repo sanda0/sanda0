@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>contrib — Sandakelum</title>
+{{ partial "seo.html" . }}
+<style>
+  :root {
+    --bg: #0d0f12;
+    --surface: #15181d;
+    --text: #e6e6e6;
+    --muted: #8b939e;
+    --accent: #7ee787;
+    --border: #232830;
+    --mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--mono); line-height: 1.6; font-size: 16px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  .back { font-size: 0.85rem; color: var(--muted); margin-bottom: 40px; display: block; }
+  .back:hover { color: var(--accent); text-decoration: none; }
+  h1 { font-size: 1.4rem; font-weight: 600; margin-bottom: 32px; }
+  h1::before { content: "// "; color: var(--accent); }
+  .timeline { display: flex; flex-direction: column; gap: 12px; }
+  .pr-card { border: 1px solid var(--border); background: var(--surface); border-radius: 6px; padding: 18px 20px; transition: border-color 0.15s ease; }
+  .pr-card:hover { border-color: var(--accent); }
+  .pr-meta { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .pr-repo { font-size: 0.78rem; color: var(--accent); }
+  .pr-date { font-size: 0.78rem; color: var(--muted); margin-left: auto; }
+  .pr-title { font-size: 0.95rem; font-weight: 500; color: var(--text); overflow-wrap: break-word; }
+  .pr-title a { color: var(--text); }
+  .pr-title a:hover { color: var(--accent); text-decoration: none; }
+  .error { color: var(--muted); font-size: 0.9rem; }
+  footer { border-top: 1px solid var(--border); padding-top: 24px; color: var(--muted); font-size: 0.8rem; margin-top: 64px; }
+  @media (max-width: 480px) {
+    .wrap { padding: 40px 18px 64px; }
+    h1 { font-size: 1.2rem; }
+    .pr-date { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a href="{{ "/" | relURL }}" class="back">← sandakelum.me</a>
+
+  <h1>contrib</h1>
+
+  <div class="timeline">
+    {{- $repos := .Params.repos -}}
+    {{- if $repos -}}
+      {{- $repoQuery := "" -}}
+      {{- range $repos -}}
+        {{- $repoQuery = printf "%s+repo:%s" $repoQuery . -}}
+      {{- end -}}
+      {{- $apiURL := printf "https://api.github.com/search/issues?q=author:sanda0+is:pr+is:merged%s&sort=updated&order=desc&per_page=50" $repoQuery -}}
+      {{- $result := try (resources.GetRemote $apiURL) -}}
+      {{- if $result.Err -}}
+        <p class="error">Could not load contributions from GitHub.</p>
+      {{- else -}}
+        {{- $data := $result.Value | transform.Unmarshal -}}
+        {{- range $data.items -}}
+          {{- $parts    := strings.Split .html_url "/" -}}
+          {{- $repoName := printf "%s/%s" (index $parts 3) (index $parts 4) -}}
+          {{- $repoURL  := printf "https://github.com/%s" $repoName -}}
+          {{- $date     := (time .created_at).Format "Jan 2006" -}}
+          <div class="pr-card">
+            <div class="pr-meta">
+              <a href="{{ $repoURL }}" class="pr-repo" target="_blank" rel="noopener">{{ $repoName }}</a>
+              <span class="pr-date">{{ $date }}</span>
+            </div>
+            <div class="pr-title">
+              <a href="{{ .html_url }}" target="_blank" rel="noopener">{{ .title }}</a>
+            </div>
+          </div>
+        {{- end -}}
+      {{- end -}}
+    {{- else -}}
+      <p class="error">No repositories configured.</p>
+    {{- end -}}
+  </div>
+
+  <footer>
+    built with hugo — &copy; {{ now.Format "2006" }} Sandakelum
+  </footer>
+
+</div>
+</body>
+</html>

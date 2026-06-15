@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects — Sandakelum</title>
-<meta name="description" content="Senior Software Engineer with 4&#43; years of experience in high-performance backend systems, browser-to-OS integration, C&#43;&#43;, Go, PHP/Laravel, and TypeScript.">
+<meta name="description" content="Software Engineer with 4&#43; years of experience in high-performance backend systems, IPC/RPC integrations, C&#43;&#43;, Go, PHP/Laravel, and TypeScript.">
 <meta name="author" content="Sandakelum Priyamantha">
 <link rel="canonical" href="https://sandakelum.me/projects/">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Sandakelum Priyamantha — Problem solver">
 <meta property="og:title" content="Projects">
-<meta property="og:description" content="Senior Software Engineer with 4&#43; years of experience in high-performance backend systems, browser-to-OS integration, C&#43;&#43;, Go, PHP/Laravel, and TypeScript.">
+<meta property="og:description" content="Software Engineer with 4&#43; years of experience in high-performance backend systems, IPC/RPC integrations, C&#43;&#43;, Go, PHP/Laravel, and TypeScript.">
 <meta property="og:url" content="https://sandakelum.me/projects/">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Projects">
-<meta name="twitter:description" content="Senior Software Engineer with 4&#43; years of experience in high-performance backend systems, browser-to-OS integration, C&#43;&#43;, Go, PHP/Laravel, and TypeScript.">
+<meta name="twitter:description" content="Software Engineer with 4&#43; years of experience in high-performance backend systems, IPC/RPC integrations, C&#43;&#43;, Go, PHP/Laravel, and TypeScript.">
 
 <style>
   :root {
@@ -46,6 +46,12 @@
   .project p { margin-top: 8px; font-size: 0.92rem; color: var(--muted); }
   .project-links { margin-top: 12px; font-size: 0.85rem; display: flex; gap: 16px; }
   footer { border-top: 1px solid var(--border); padding-top: 24px; color: var(--muted); font-size: 0.8rem; margin-top: 64px; }
+  @media (max-width: 480px) {
+    .wrap { padding: 40px 18px 64px; }
+    h1 { font-size: 1.2rem; }
+    .project-tags { white-space: normal; }
+    .project-links { flex-wrap: wrap; gap: 10px; }
+  }
 </style>
 </head>
 <body>
@@ -59,14 +65,14 @@
     
     <div class="project">
       <div class="project-title">
-        <h3><a href="/projects/kashledger/">KashLedger Accounting System</a></h3>
-        <span class="project-tags">laravel · react · ts · mysql</span>
+        <h3><a href="/projects/vps-pilot/">VPS Pilot</a></h3>
+        <span class="project-tags">go · react</span>
       </div>
-      <p><p>Full double-entry accounting system featuring Trial Balance, Profit &amp; Loss, and automated journal entries with PDF export capabilities.</p></p>
+      <p><p>Real-time server monitoring dashboard that tracks system stats and manages cron jobs for private VPS servers.</p></p>
       
       <div class="project-links">
         
-        <a href="https://kashledger.com" target="_blank" rel="noopener">kashledger.com</a>
+        <a href="https://github.com/sanda0/vps_pilot" target="_blank" rel="noopener">github repository</a>
         
       </div>
       
@@ -74,14 +80,14 @@
     
     <div class="project">
       <div class="project-title">
-        <h3><a href="/projects/vps-pilot/">VPS Pilot</a></h3>
-        <span class="project-tags">go · timescaledb · react</span>
+        <h3><a href="/projects/kashledger/">KashLedger Accounting System</a></h3>
+        <span class="project-tags">laravel · react · ts · mysql</span>
       </div>
-      <p><p>Real-time server monitoring dashboard that tracks system stats and manages cron jobs for private VPS servers.</p></p>
+      <p><p>Full double-entry accounting system featuring Trial Balance, Profit &amp; Loss, and automated journal entries with PDF export capabilities.</p></p>
       
       <div class="project-links">
         
-        <a href="#" target="_blank" rel="noopener">github repository</a>
+        <a href="" target="_blank" rel="noopener"></a>
         
       </div>
       
@@ -96,7 +102,22 @@
       
       <div class="project-links">
         
-        <a href="#" target="_blank" rel="noopener">github repository</a>
+        <a href="https://github.com/sanda0/json2docs" target="_blank" rel="noopener">github repository</a>
+        
+      </div>
+      
+    </div>
+    
+    <div class="project">
+      <div class="project-title">
+        <h3><a href="/projects/linodsync/">linodsync</a></h3>
+        <span class="project-tags">go</span>
+      </div>
+      <p><p>Linodsync is a Go-based application designed to back up your project directories and databases on a server to Linode Object Storage.</p></p>
+      
+      <div class="project-links">
+        
+        <a href="https://github.com/sanda0/linodsync" target="_blank" rel="noopener">github repository</a>
         
       </div>
       

@@ -33,6 +33,12 @@
   .project p { margin-top: 8px; font-size: 0.92rem; color: var(--muted); }
   .project-links { margin-top: 12px; font-size: 0.85rem; display: flex; gap: 16px; }
   footer { border-top: 1px solid var(--border); padding-top: 24px; color: var(--muted); font-size: 0.8rem; margin-top: 64px; }
+  @media (max-width: 480px) {
+    .wrap { padding: 40px 18px 64px; }
+    h1 { font-size: 1.2rem; }
+    .project-tags { white-space: normal; }
+    .project-links { flex-wrap: wrap; gap: 10px; }
+  }
 </style>
 </head>
 <body>
