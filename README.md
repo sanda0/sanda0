@@ -1,10 +1,13 @@
-# sandakelum.me
+# Hi, I'm Sandakelum 👋
 
-Personal portfolio and blog site for [Sandakelum Priyamantha](https://sandakelum.me), built with [Hugo](https://gohugo.io) and deployed to GitHub Pages.
+**Software Engineer** based in Sri Lanka — I love turning ideas into real things.
 
-## Stack
+I build high-performance backend systems, IPC/RPC integrations between web and OS, and scalable multi-tenant applications.
 
-- **Hugo** (extended) — static site generator
-- **Dart Sass** — stylesheet compilation
-- **GitHub Actions** — CI/CD pipeline
-- **GitHub Pages** — hosting
+---
+
+### 🔗 Find me
+
+[![Website](https://img.shields.io/badge/sandakelum.me-000?style=flat&logo=hugo&logoColor=white)](https://sandakelum.me) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sandakelum-priyamantha/) 
+[![Medium](https://img.shields.io/badge/Medium-000000?style=flat&logo=medium&logoColor=white)](https://medium.com/@sandakelum)
