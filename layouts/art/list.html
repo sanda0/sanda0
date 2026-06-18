@@ -25,6 +25,7 @@
   .back:hover { color: var(--accent); text-decoration: none; }
   h1 { font-size: 1.4rem; font-weight: 600; margin-bottom: 32px; }
   h1::before { content: "// "; color: var(--accent); }
+  .page-desc { color: var(--muted); font-size: 0.875rem; margin-top: -16px; margin-bottom: 28px; }
 
   .gallery {
     columns: 2;
@@ -114,6 +115,7 @@
   <a href="{{ "/" | relURL }}" class="back">← sandakelum.me</a>
 
   <h1>art</h1>
+  {{ with .Description }}<p class="page-desc">{{ . }}</p>{{ end }}
 
   {{ with .Params.art }}
   <div class="gallery">
