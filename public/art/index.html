@@ -131,7 +131,7 @@
   
   <div class="gallery">
     
-    <div class="art-item" data-src="/art/" data-title="">
+    <div class="art-item" data-src="/art/">
       <img src="/art/" alt="" loading="lazy">
       <div class="art-caption">
         <span class="art-caption-title"></span>
@@ -174,7 +174,7 @@
 
   document.querySelectorAll('.art-item').forEach(function (item) {
     item.addEventListener('click', function () {
-      open(item.dataset.src, item.dataset.title);
+      open(item.dataset.src);
     });
   });
 

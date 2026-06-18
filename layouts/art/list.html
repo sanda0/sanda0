@@ -118,8 +118,8 @@
   {{ with .Params.art }}
   <div class="gallery">
     {{ range . }}
-    <div class="art-item" data-src="{{ "/art/" | relURL }}{{ .file }}" data-title="{{ .title }}">
-      <img src="{{ "/art/" | relURL }}{{ .file }}" alt="{{ .title }}" loading="lazy">
+    <div class="art-item" data-src="/art/{{ .file }}">
+      <img src="/art/{{ .file }}" alt="{{ .title }}" loading="lazy">
       <div class="art-caption">
         <span class="art-caption-title">{{ .title }}</span>
         <span class="art-caption-date">{{ .date }}</span>
@@ -161,7 +161,7 @@
 
   document.querySelectorAll('.art-item').forEach(function (item) {
     item.addEventListener('click', function () {
-      open(item.dataset.src, item.dataset.title);
+      open(item.dataset.src);
     });
   });
 
