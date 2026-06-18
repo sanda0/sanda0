@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Projects on Sandakelum Priyamantha — Problem solver</title>
-		<link>https://sandakelum.me/projects/</link>
+		<link>http://localhost:1313/projects/</link>
 		<description>Recent content in Projects on Sandakelum Priyamantha — Problem solver</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -10,33 +10,33 @@
 		
 		
 		
-			<atom:link href="https://sandakelum.me/projects/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>VPS Pilot</title>
-				<link>https://sandakelum.me/projects/vps-pilot/</link>
+				<link>http://localhost:1313/projects/vps-pilot/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://sandakelum.me/projects/vps-pilot/</guid>
+				<guid>http://localhost:1313/projects/vps-pilot/</guid>
 				<description>&lt;p&gt;Real-time server monitoring dashboard that tracks system stats and manages cron jobs for private VPS servers.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>KashLedger Accounting System</title>
-				<link>https://sandakelum.me/projects/kashledger/</link>
+				<link>http://localhost:1313/projects/kashledger/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://sandakelum.me/projects/kashledger/</guid>
+				<guid>http://localhost:1313/projects/kashledger/</guid>
 				<description>&lt;p&gt;Full double-entry accounting system featuring Trial Balance, Profit &amp;amp; Loss, and automated journal entries with PDF export capabilities.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>json2docs</title>
-				<link>https://sandakelum.me/projects/json2docs/</link>
+				<link>http://localhost:1313/projects/json2docs/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://sandakelum.me/projects/json2docs/</guid>
+				<guid>http://localhost:1313/projects/json2docs/</guid>
 				<description>&lt;p&gt;Go library to convert complex JSON data structures into formatted PDF, HTML, and Excel documents.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>linodsync</title>
-				<link>https://sandakelum.me/projects/linodsync/</link>
+				<link>http://localhost:1313/projects/linodsync/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://sandakelum.me/projects/linodsync/</guid>
+				<guid>http://localhost:1313/projects/linodsync/</guid>
 				<description>&lt;p&gt;Linodsync is a Go-based application designed to back up your project directories and databases on a server to Linode Object Storage.&lt;/p&gt;</description>
 			</item>
 	</channel>
