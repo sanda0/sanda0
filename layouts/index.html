@@ -38,6 +38,22 @@
 
   header { margin-bottom: 56px; }
 
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
   .prompt {
     color: var(--accent);
     font-size: 14px;
@@ -105,8 +121,13 @@
 <div class="wrap">
 
   <header>
-    <div class="prompt">$ whoami</div>
-    <h1>Sandakelum Priyamantha</h1>
+    <div class="header-top">
+      <img src="/images/img.webp" alt="Sandakelum Priyamantha" class="avatar" width="72" height="72">
+      <div>
+        <div class="prompt">$ whoami</div>
+        <h1>Sandakelum Priyamantha</h1>
+      </div>
+    </div>
     <p class="tagline">{{ .Site.Params.tagline }}</p>
     <nav>
       <a href="{{ "experience/" | relURL }}">experience</a>
