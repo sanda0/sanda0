@@ -1,1 +1,15 @@
 /templates/post.md
+
+# Hugo generated output
+/public/
+/resources/_gen/
+/.hugo_build.lock
+/hugo_stats.json
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
