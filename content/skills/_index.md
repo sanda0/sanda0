@@ -7,6 +7,7 @@ skills:
   - "PHP / Laravel"
   - "TypeScript / JavaScript"
   - "Python"
+  - "C"
   - "C++"
   - "Gin / Echo / Fiber"
   - "Django"
