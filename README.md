@@ -4,7 +4,7 @@
 
 I build high-performance backend systems, IPC/RPC integrations between web and OS, and scalable multi-tenant applications.
 
-🐱 Fun fact: I'm a certified cat person.
+🐱 Fun fact: I'm a certified cat lover.
 
 ---
 
