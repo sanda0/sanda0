@@ -1,6 +1,6 @@
 ---
 title: "VPS Pilot"
-tags_display: "go · react"
+tags_display: "go · react · rust"
 links:
   - label: "github repository"
     url: "https://github.com/sanda0/vps_pilot"

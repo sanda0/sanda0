@@ -24,3 +24,6 @@ enableRobotsTXT = true
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+  [caches.getresource]
+    dir = ':cacheDir/:project'
+    maxAge = '1h'
