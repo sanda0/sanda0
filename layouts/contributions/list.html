@@ -35,6 +35,7 @@
   .pr-title a { color: var(--text); }
   .pr-title a:hover { color: var(--accent); text-decoration: none; }
   .error { color: var(--muted); font-size: 0.9rem; }
+  .section-label { color: var(--muted); font-size: 0.8rem; margin-bottom: 12px; }
   footer { border-top: 1px solid var(--border); padding-top: 24px; color: var(--muted); font-size: 0.8rem; margin-top: 64px; }
   @media (max-width: 480px) {
     .wrap { padding: 40px 18px 64px; }
@@ -51,6 +52,7 @@
   <h1>contrib</h1>
   {{ with .Description }}<p class="page-desc">{{ . }}</p>{{ end }}
 
+  <p class="section-label">latest contributions</p>
   <div class="timeline">
     {{- $repos := .Params.repos -}}
     {{- if $repos -}}
@@ -64,7 +66,7 @@
         <p class="error">Could not load contributions from GitHub.</p>
       {{- else -}}
         {{- $data := $result.Value | transform.Unmarshal -}}
-        {{- range $data.items -}}
+        {{- range first 10 $data.items -}}
           {{- $parts    := strings.Split .html_url "/" -}}
           {{- $repoName := printf "%s/%s" (index $parts 3) (index $parts 4) -}}
           {{- $repoURL  := printf "https://github.com/%s" $repoName -}}
