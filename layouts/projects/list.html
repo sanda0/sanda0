@@ -60,9 +60,9 @@
       <p>{{ .Summary }}</p>
       {{ if .Params.links }}
       <div class="project-links">
-        {{ range .Params.links }}
+        {{ range .Params.links }}{{ if .url }}
         <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
-        {{ end }}
+        {{ end }}{{ end }}
       </div>
       {{ end }}
     </div>

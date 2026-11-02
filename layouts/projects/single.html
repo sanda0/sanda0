@@ -24,6 +24,7 @@
   .back:hover { color: var(--accent); text-decoration: none; }
   h1 { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
   .meta { color: var(--accent); font-size: 0.85rem; margin-bottom: 16px; }
+  .cover { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 24px; }
   .links { display: flex; gap: 16px; font-size: 0.9rem; margin-bottom: 40px; }
   .content { color: #c9ccd1; }
   .content p { max-width: 65ch; margin-bottom: 1.2em; }
@@ -47,11 +48,14 @@
 
   <h1>{{ .Title }}</h1>
   {{ with .Params.tags_display }}<div class="meta">{{ . }}</div>{{ end }}
+  {{ with .Params.image }}{{ with resources.Get . }}{{ $img := .Process "webp q80" }}
+  <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" class="cover" width="{{ $img.Width }}" height="{{ $img.Height }}">
+  {{ end }}{{ end }}
   {{ if .Params.links }}
   <div class="links">
-    {{ range .Params.links }}
+    {{ range .Params.links }}{{ if .url }}
     <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
-    {{ end }}
+    {{ end }}{{ end }}
   </div>
   {{ end }}
 
