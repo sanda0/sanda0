@@ -38,4 +38,4 @@ If a future version adds features that handle data (for example an online leader
 
 ## Contact
 
-Questions about this policy: [sandakelum.work@gmail.com](mailto:sandakelum.work@gmail.com)
+Questions about this policy: [sandakelum.dev@gmail.com](mailto:sandakelum.dev@gmail.com)
