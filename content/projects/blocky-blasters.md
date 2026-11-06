@@ -19,4 +19,4 @@ Fast first-person survival shooter for Android. Hold a foggy graveyard against w
 - Touch controls with aim assist, auto-fire and a fully movable/resizable button layout
 - 39 achievements, wave shop and combo scoring
 
-[Privacy policy](/apps/blocky-blasters/privacypolicy/)
+[Privacy policy](/apps/blocky-blasters/privacypolicy/) · [Terms of service](/apps/blocky-blasters/terms/)
