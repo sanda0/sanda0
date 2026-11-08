@@ -9,7 +9,7 @@ links:
     url: ""
 ---
 
-Fast first-person survival shooter for Android. Hold a foggy graveyard against waves of blocky zombies, ghosts, robots and bosses, upgrade between waves and chase high scores. Fully offline, no ads, no in-app purchases.
+Fast first-person survival shooter for Android. Hold a foggy graveyard against waves of blocky zombies, ghosts, robots and bosses, upgrade between waves and chase high scores. Plays offline, free with ads (never during play), no in-app purchases.
 
 ## Highlights
 
