@@ -5,7 +5,7 @@ description: "Terms of service for the Blocky Blasters Android game."
 
 _Last updated: 6 November 2026_
 
-These terms apply to Blocky Blasters: Zombie Night ("the game"), made by The Pixel Forge ("we", "us"). By downloading or playing the game you agree to them. If you do not agree, please do not use the game.
+These terms apply to Blocky Blasters: Zombie Siege ("the game"), made by The Pixel Forge ("we", "us"). By downloading or playing the game you agree to them. If you do not agree, please do not use the game.
 
 ## The game
 

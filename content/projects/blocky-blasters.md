@@ -1,5 +1,5 @@
 ---
-title: "Blocky Blasters: Zombie Night"
+title: "Blocky Blasters: Zombie Siege"
 tags_display: "godot · gdscript · android"
 weight: 2
 image: "images/projects/blocky-blasters.png"
