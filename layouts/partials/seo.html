@@ -6,6 +6,9 @@
 <meta name="description" content="{{ $desc }}">
 <meta name="author" content="{{ $author }}">
 <link rel="canonical" href="{{ $url }}">
+{{- with .Site.Params.rss }}
+<link rel="alternate" type="application/rss+xml" title="{{ $author }}: writing" href="{{ . }}">
+{{- end }}
 
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">

@@ -2,6 +2,7 @@
 title: "VPS Pilot"
 tags_display: "go · react · rust"
 featured: true
+door: "software"
 logo: "images/projects/logos/vps-pilot.svg"
 blurb: "One self-hosted dashboard for your Linux VPSs: live stats, cron jobs and alerts."
 links:

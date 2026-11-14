@@ -101,8 +101,6 @@
 
   p { color: var(--text-soft); max-width: 60ch; }
 
-  .skills-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
-  .skill { border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--muted); }
 
   footer {
     border-top: 1px solid var(--border);
@@ -111,12 +109,46 @@
     font-size: 0.8rem;
   }
 
-  .featured-grid { display: grid; gap: 16px; }
+  /* hero */
+  .hero { margin-top: 36px; }
+  .hero-line {
+    font-size: 1.55rem;
+    line-height: 1.35;
+    color: var(--text);
+    font-weight: 600;
+    max-width: 30ch;
+  }
+  .hl { color: var(--accent); white-space: nowrap; }
+  .hero .tagline { margin-top: 14px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .btn {
+    display: inline-block;
+    padding: 9px 16px;
+    font-family: var(--pixel, var(--mono));
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    background: var(--surface);
+    border: 2px solid var(--border);
+    box-shadow: 3px 3px 0 var(--shadow, #000) !important;
+    transition: transform 0.1s steps(2), box-shadow 0.1s steps(2);
+  }
+  .btn:hover { color: var(--text); border-color: var(--moon, var(--text)); transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--accent) !important; }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .btn-primary:hover { color: var(--bg); border-color: var(--accent); box-shadow: 5px 5px 0 var(--moon, var(--text)) !important; }
+  .trust { margin-top: 16px; font-size: 0.78rem; color: var(--muted); }
+
+  /* personal projects: two doors */
+  .doors { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .door { display: flex; flex-direction: column; gap: 12px; }
+  .door-head { min-height: 4.6em; }
+  .door-title { display: block; font-family: var(--pixel, var(--mono)); font-size: 0.9rem; color: var(--accent); }
+  .door-line { display: block; margin-top: 4px; font-size: 0.82rem; color: var(--muted); }
   .feature-card {
+    flex: 1;
     display: flex;
-    gap: 18px;
-    align-items: flex-start;
-    padding: 18px;
+    flex-direction: column;
+    padding: 16px;
     background: var(--surface);
     border: 2px solid var(--border);
     box-shadow: 4px 4px 0 var(--shadow, #000);
@@ -127,29 +159,44 @@
     box-shadow: 6px 6px 0 var(--accent);
     transform: translate(-2px, -2px);
   }
+  .feature-top { display: flex; gap: 14px; align-items: center; }
   .feature-logo { flex-shrink: 0; box-shadow: none !important; display: block; line-height: 0; }
   .feature-logo img {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     object-fit: cover;
     border: 2px solid var(--border);
     box-shadow: 3px 3px 0 var(--shadow, #000);
   }
   .feature-card:hover .feature-logo img { border-color: var(--accent); }
-  .feature-body { min-width: 0; }
-  .feature-body h3 { font-size: 1rem; line-height: 1.3; }
-  .feature-body h3 a { box-shadow: none; }
-  .feature-tags { color: var(--accent); font-size: 0.75rem; margin-top: 4px; }
-  .feature-body p { margin-top: 8px; font-size: 0.9rem; }
-  .feature-links { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.82rem; }
-  .all-projects { display: inline-block; margin-top: 18px; font-size: 0.85rem; }
+  .feature-card h3 { font-size: 0.95rem; line-height: 1.3; }
+  .feature-card h3 a { box-shadow: none; }
+  .feature-tags { color: var(--accent); font-size: 0.72rem; margin-top: 4px; }
+  .feature-card p { margin-top: 12px; font-size: 0.88rem; flex: 1; }
+  .feature-links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.8rem; }
+  .all-projects { display: inline-block; margin-top: 20px; font-size: 0.85rem; }
+
+
+  /* say hi */
+  .say-hi {
+    padding: 24px;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    box-shadow: 4px 4px 0 var(--shadow, #000);
+  }
+  .prompts { margin-top: 12px; font-size: 0.9rem; }
+
+  @media (max-width: 640px) {
+    .doors { grid-template-columns: 1fr; }
+    .door-head { min-height: 0; }
+  }
   @media (prefers-reduced-motion: reduce) {
-    .feature-card, .feature-card:hover { transition: none; transform: none; }
+    .btn, .btn:hover, .feature-card, .feature-card:hover { transition: none; transform: none; }
   }
 
   @media (max-width: 480px) {
-    .feature-card { padding: 14px; gap: 14px; }
-    .feature-logo img { width: 48px; height: 48px; }
+    .hero-line { font-size: 1.25rem; }
+    .say-hi { padding: 18px; }
     h1 { font-size: 1.6rem; }
   }
 </style>
@@ -166,7 +213,6 @@
         <h1>Sandakelum Priyamantha</h1>
       </div>
     </div>
-    <p class="tagline">{{ .Site.Params.tagline }}</p>
     <nav>
       <a href="{{ "experience/" | relURL }}">experience</a>
       <a href="{{ "projects/" | relURL }}">projects</a>
@@ -174,26 +220,43 @@
       <a href="{{ "contributions/" | relURL }}">contrib</a>
       <a href="{{ "contact/" | relURL }}">contact</a>
     </nav>
+
+    {{- $projects := where site.RegularPages "Section" "projects" }}
+    {{- $game := index (where $projects "Params.door" "games") 0 }}
+    <div class="hero">
+      <p class="hero-line">{{ delimit .Params.hero "<br>" | safeHTML }} <span class="hl">{{ .Params.hero_hl }}</span></p>
+      <p class="tagline">{{ .Site.Params.tagline }}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#projects">see my projects</a>
+        {{- with $game }}{{ with index (where .Params.links "label" "google play") 0 }}
+        <a class="btn" href="{{ .url }}" target="_blank" rel="noopener">play my game</a>
+        {{- end }}{{ end }}
+      </div>
+      <p class="trust">{{ delimit .Params.trust " · " }}</p>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>about</h2>
-    <p>{{ .Params.about }}</p>
-  </section>
-
-  {{- $featured := where (where site.RegularPages "Section" "projects") "Params.featured" true }}
-  {{- with $featured }}
-  <section id="featured">
-    <h2>featured projects</h2>
-    <div class="featured-grid">
-      {{- range sort . "Params.weight" }}
-      <article class="feature-card">
-        <a href="{{ .RelPermalink }}" class="feature-logo" aria-hidden="true" tabindex="-1">
-          <img src="{{ .Params.logo | relURL }}" alt="" width="64" height="64" loading="lazy">
-        </a>
-        <div class="feature-body">
-          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <div class="feature-tags">{{ .Params.tags_display }}</div>
+  <section id="projects">
+    <h2>personal projects</h2>
+    <div class="doors">
+      {{- range .Params.doors }}
+      {{- $key := .key }}
+      <div class="door">
+        <div class="door-head">
+          <span class="door-title">&gt; {{ $key }}</span>
+          <span class="door-line">{{ .line }}</span>
+        </div>
+        {{- range sort (where (where $projects "Params.featured" true) "Params.door" $key) "Params.weight" }}
+        <article class="feature-card">
+          <div class="feature-top">
+            <a href="{{ .RelPermalink }}" class="feature-logo" aria-hidden="true" tabindex="-1">
+              <img src="{{ .Params.logo | relURL }}" alt="" width="56" height="56" loading="lazy">
+            </a>
+            <div>
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <div class="feature-tags">{{ .Params.tags_display }}</div>
+            </div>
+          </div>
           <p>{{ .Params.blurb | default .Summary }}</p>
           <div class="feature-links">
             <a href="{{ .RelPermalink }}">details →</a>
@@ -201,25 +264,37 @@
             <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label | replaceRE "repository$" "" | strings.TrimSpace }}</a>
             {{- end }}{{ end }}
           </div>
-        </div>
-      </article>
+        </article>
+        {{- end }}
+      </div>
       {{- end }}
     </div>
     <a class="all-projects" href="{{ "projects/" | relURL }}">all projects →</a>
   </section>
-  {{- end }}
 
-  <section id="skills">
-    <h2>skills</h2>
-    <div class="skills-list">
-      {{ range .Params.skills }}
-      <span class="skill">{{ . }}</span>
-      {{ end }}
-    </div>
+  <section id="about">
+    <h2>about</h2>
+    <p>{{ .Params.about }}</p>
   </section>
 
+  {{- with .Params.contact }}
+  <section id="say-hi" class="say-hi">
+    <h2>say hi</h2>
+    <p class="hero-line">{{ .lead }} <span class="hl">{{ .hl }}</span></p>
+    <p class="prompts">{{ delimit .prompts " " }} Tell me about it.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:{{ site.Params.email }}">email me</a>
+      {{- with site.Params.whatsapp }}
+      <a class="btn" href="https://wa.me/{{ . }}" target="_blank" rel="noopener">whatsapp</a>
+      {{- end }}
+      <a class="btn" href="{{ site.Params.linkedin }}" target="_blank" rel="noopener">linkedin</a>
+      <a class="btn" href="{{ site.Params.github }}" target="_blank" rel="noopener">github</a>
+    </div>
+  </section>
+  {{- end }}
+
   <footer>
-    built with hugo — &copy; {{ now.Format "2006" }} Sandakelum
+    built with hugo — &copy; {{ now.Format "2006" }} Sandakelum{{ with site.Params.rss }} · <a href="{{ . }}" target="_blank" rel="noopener">rss</a>{{ end }}
   </footer>
 
 </div>

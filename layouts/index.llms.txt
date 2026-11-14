@@ -6,8 +6,6 @@
 
 {{ with .Params.about }}{{ . | plainify | strings.TrimSpace }}{{ end }}
 
-Skills: {{ delimit .Params.skills ", " }}.
-
 ## Projects
 {{ with site.GetPage "/projects" }}{{ range sort .Pages "Params.weight" }}
 {{- $first := index (findRE `(?s)<p>.*?</p>` .Content 1) 0 | default "" }}
@@ -37,6 +35,8 @@ Full page: {{ .Permalink }}
 ## Contact
 
 - Email: {{ site.Params.email }}
+{{- with site.Params.whatsapp }}
+- WhatsApp: https://wa.me/{{ . }}{{ end }}
 - GitHub: {{ site.Params.github }}
 - LinkedIn: {{ site.Params.linkedin }}
 - Contact page: {{ with site.GetPage "/contact" }}{{ .Permalink }}{{ end }}
@@ -44,9 +44,6 @@ Full page: {{ .Permalink }}
 ## Optional
 {{ with site.GetPage "/contributions" }}
 - [Open source contributions]({{ .Permalink }}): {{ .Description }}
-{{- end }}
-{{- with site.GetPage "/skills" }}
-- [Skills]({{ .Permalink }}): {{ .Description }}
 {{- end }}
 {{- range where site.RegularPages "Section" "apps" }}
 - [{{ .Title }}]({{ .Permalink }})
