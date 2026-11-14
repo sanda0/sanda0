@@ -99,7 +99,7 @@
     color: var(--accent);
   }
 
-  p { color: #c9ccd1; max-width: 60ch; }
+  p { color: var(--text-soft); max-width: 60ch; }
 
   .skills-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
   .skill { border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.82rem; color: var(--muted); }
@@ -116,6 +116,7 @@
     h1 { font-size: 1.6rem; }
   }
 </style>
+{{ partial "theme.html" . }}
 </head>
 <body>
 <div class="wrap">
@@ -165,7 +166,7 @@
   "name": "{{ .Site.Params.author }}",
   "url": "{{ .Site.BaseURL }}",
   "email": "{{ .Site.Params.email }}",
-  "jobTitle": "Senior Software Engineer",
+  "jobTitle": "Senior Software Engineer & Indie Game Developer",
   "description": "{{ .Site.Params.description }}",
   "sameAs": [
     "{{ .Site.Params.github }}",

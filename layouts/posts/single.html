@@ -57,7 +57,7 @@
     margin-bottom: 40px;
   }
 
-  .content { color: #c9ccd1; }
+  .content { color: var(--text-soft); }
   .content p { max-width: 65ch; margin-bottom: 1.2em; }
   .content h2 { color: var(--accent); margin: 2em 0 0.6em; font-size: 1rem; }
   .content h3 { color: var(--text); margin: 1.5em 0 0.4em; font-size: 0.95rem; }
@@ -91,6 +91,7 @@
     h1 { font-size: 1.3rem; }
   }
 </style>
+{{ partial "theme.html" . }}
 </head>
 <body>
 <div class="wrap">

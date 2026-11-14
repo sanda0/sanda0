@@ -41,6 +41,7 @@
     .project-links { flex-wrap: wrap; gap: 10px; }
   }
 </style>
+{{ partial "theme.html" . }}
 </head>
 <body>
 <div class="wrap">
@@ -57,7 +58,9 @@
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         <span class="project-tags">{{ .Params.tags_display }}</span>
       </div>
-      <p>{{ .Summary }}</p>
+      {{- /* card text: front-matter description if set, else only the first paragraph (no Highlights) */}}
+      {{- $first := index (findRE `(?s)<p>.*?</p>` .Content 1) 0 | default "" }}
+      <p>{{ with .Description }}{{ . }}{{ else }}{{ $first | plainify | htmlUnescape }}{{ end }}</p>
       {{ if .Params.links }}
       <div class="project-links">
         {{ range .Params.links }}{{ if .url }}
