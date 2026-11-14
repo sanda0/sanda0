@@ -1,12 +1,13 @@
 ---
-title: "Sandakelum Priyamantha — Problem solver"
-description: "Software Engineer with 4+ years of experience in high-performance backend systems, IPC/RPC integrations, C++, Go, PHP/Laravel, and TypeScript."
+title: "Sandakelum Priyamantha — Software engineer & indie game dev"
+description: "Software Engineer with 5+ years of experience in high-performance backend systems, IPC/RPC integrations, C++, Go, PHP/Laravel, and TypeScript. Indie game developer making mobile games with Godot."
 
 about: >
-  Software Engineer with 4+ years of experience building high-performance backend systems
+  Software Engineer with 5+ years of experience building high-performance backend systems
   and IPC/RPC integrations between web environments and operating systems. Experienced with
   C++, Go, PHP (Laravel), and TypeScript, with a track record of architecting multi-tenant
   applications, real-time monitoring tools, and scalable REST/GraphQL APIs.
+  I'm also an indie game developer: I design and build small games for mobile in Godot.
 
 skills:
   - "Go"
@@ -14,6 +15,7 @@ skills:
   - "TypeScript / JavaScript"
   - "Python"
   - "C++"
+  - "Godot / GDScript"
   - "Gin / Echo / Fiber"
   - "Django"
   - "React / Vue.js"

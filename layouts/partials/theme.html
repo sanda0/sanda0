@@ -1,0 +1,135 @@
+{{- /*
+  Brand theme: "Sandakelum" = moonlight. Navy night, moon-cream text, one orange accent,
+  pixel headings, square corners, pixel stars and moon. Included last in every <head>,
+  so these tokens and rules override each page's own inline <style>.
+  Brand assets in /static/brand/ come from pixelforge/brand (bash src/render.sh -> out/web/).
+*/ -}}
+<link rel="icon" href="{{ "brand/favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ "brand/icon-512.png" | relURL }}">
+<meta name="theme-color" content="#0E1430">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Silkscreen&display=swap">
+<style>
+  :root {
+    --bg: #0E1430;          /* deep night */
+    --surface: #17224D;     /* brand navy */
+    --text: #F4F0DC;        /* moon cream */
+    --text-soft: #C9CEE6;
+    --muted: #8F9BCB;       /* moonlit snow */
+    --accent: #FF6B35;      /* the orange spark */
+    --moon: #F4F0DC;
+    --border: #2B3A7A;      /* far mountains */
+    --shadow: #0A0F26;
+    --mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --pixel: "Silkscreen", var(--mono);
+    color-scheme: dark;
+  }
+
+  html { background-color: var(--bg); }
+  body { background: transparent !important; }
+
+  /* stars only in the side margins: masked out over the 720px text column */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("{{ "brand/stars.svg" | relURL }}") 0 0 / 320px 320px;
+    image-rendering: pixelated;
+    pointer-events: none;
+    z-index: -2;
+    --clear: 420px; /* half the column + a little breathing room */
+    -webkit-mask-image: linear-gradient(to right, #000 calc(50% - var(--clear) - 60px), transparent calc(50% - var(--clear)), transparent calc(50% + var(--clear)), #000 calc(50% + var(--clear) + 60px));
+            mask-image: linear-gradient(to right, #000 calc(50% - var(--clear) - 60px), transparent calc(50% - var(--clear)), transparent calc(50% + var(--clear)), #000 calc(50% + var(--clear) + 60px));
+  }
+  @media (max-width: 960px) {
+    body::after { display: none; } /* the text column fills the screen: no stars */
+  }
+
+  /* pixel moon, top right, behind the content */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 28px;
+    right: 32px;
+    width: 144px;
+    height: 144px;
+    background: url("{{ "brand/moon.svg" | relURL }}") center / contain no-repeat;
+    image-rendering: pixelated;
+    pointer-events: none;
+    z-index: -1;
+  }
+  @media (max-width: 1100px) {
+    body::before { width: 96px; height: 96px; top: 16px; right: 16px; opacity: 0.55; }
+  }
+  @media (max-width: 960px) {
+    body::before { display: none; } /* would sit behind the header text */
+  }
+
+  /* square, pixel-perfect corners everywhere */
+  *, *::before, *::after { border-radius: 0 !important; }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* pixel type for headings and navigation */
+  h1, h2, h3, nav, .prompt, .back {
+    font-family: var(--pixel);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  h1 { color: var(--moon); }
+  h3 { font-size: 1rem; }
+  p { color: var(--text-soft); }
+
+  /* section markers: a single orange pixel instead of "// " */
+  h1::before, h2::before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    margin-right: 0.6em;
+    vertical-align: 0.12em;
+    background: var(--accent);
+  }
+  .header-top h1::before { display: none; }
+
+  a { color: var(--moon); text-decoration: none; box-shadow: inset 0 -2px 0 var(--accent); }
+  a:hover { color: var(--accent); text-decoration: none; box-shadow: none; }
+  nav a, .back, h3 a, .project-title a, .post-title a { box-shadow: none; }
+  nav a:hover, .back:hover { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* the whoami prompt reads like moonlight */
+  .prompt { color: var(--muted); }
+  .prompt::after { content: "_"; color: var(--accent); animation: blink 1s steps(1) infinite; margin-left: 2px; }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .prompt::after { animation: none; } }
+
+  /* avatar: square with a stepped pixel frame */
+  .avatar {
+    border: 0 !important;
+    box-shadow: 0 0 0 3px var(--bg), 0 0 0 6px var(--moon), 6px 6px 0 6px var(--accent);
+  }
+
+  /* cards: navy panels with a hard pixel drop shadow */
+  .project, .item, .pr-card, .post-item, .cover, .content pre {
+    background: var(--surface);
+    border: 2px solid var(--border) !important;
+    box-shadow: 4px 4px 0 var(--shadow);
+  }
+  .project:hover, .item:hover, .pr-card:hover, .post-item:hover {
+    border-color: var(--moon) !important;
+    box-shadow: 4px 4px 0 var(--accent);
+  }
+  .project-tags { color: var(--accent); }
+
+  .skill {
+    border: 2px solid var(--border) !important;
+    background: var(--surface);
+    color: var(--text-soft) !important;
+  }
+
+  code { color: var(--moon); }
+
+  footer { border-top: 2px dashed var(--border) !important; }
+</style>
