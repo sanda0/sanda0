@@ -4,6 +4,7 @@ tags_display: "godot · gdscript · android · admob"
 weight: 2
 image: "images/projects/blocky-blasters.png"
 featured: true
+door: "games"
 logo: "images/projects/logos/blocky-blasters.png"
 blurb: "Blocky first-person shooter meets tower defense on Android. Build towers, survive the night."
 gallery:

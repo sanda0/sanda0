@@ -47,7 +47,7 @@
   <a href="{{ "/" | relURL }}" class="back">← sandakelum.me</a>
 
   <h1>writing</h1>
-  {{ with .Description }}<p class="page-desc">{{ . }}</p>{{ end }}
+  {{ with .Description }}<p class="page-desc">{{ . }}{{ with site.Params.rss }} <a href="{{ . }}" target="_blank" rel="noopener">follow via rss</a>{{ end }}</p>{{ end }}
 
   <div class="post-list">
     {{- $posts := slice -}}

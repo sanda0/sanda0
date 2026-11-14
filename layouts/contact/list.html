@@ -50,6 +50,12 @@
       <span class="contact-label">email</span>
       <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
     </div>
+    {{ with .Site.Params.whatsapp }}
+    <div class="contact-row">
+      <span class="contact-label">whatsapp</span>
+      <a href="https://wa.me/{{ . }}" target="_blank" rel="noopener">{{ $.Site.Params.phone }}</a>
+    </div>
+    {{ end }}
     {{ with .Site.Params.github }}
     <div class="contact-row">
       <span class="contact-label">github</span>

@@ -8,14 +8,16 @@ enableRobotsTXT = true
   priority = 0.5
 
 [params]
-  tagline = "Senior Software Engineer & indie game developer — high-performance backend systems, browser-to-OS integration, and small games for mobile."
+  tagline = "Senior software engineer and indie game developer. I build fast backends, browser extensions with native host apps, and small mobile games."
   description = "Software engineer (5+ years): high-performance backends, IPC/RPC, C++, Go, Laravel, TypeScript. Indie game developer making mobile games in Godot."
   author = "Sandakelum Priyamantha"
   email = "sandakelum.work@gmail.com"
   phone = "+94 76 943 8974"
+  whatsapp = "94769438974"  # digits only, used for wa.me links
   github = "https://github.com/sanda0"
   linkedin = "https://www.linkedin.com/in/sandakelum-priyamantha/"
   medium = "https://medium.com/@sandakelum"
+  rss = "https://medium.com/feed/@sandakelum"  # the writing feed; articles live on Medium
   twitter = ""
 
 [markup.highlight]
