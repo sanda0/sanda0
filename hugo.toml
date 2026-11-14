@@ -28,3 +28,12 @@ enableRobotsTXT = true
     dir = ':cacheDir/:project'
     maxAge = '1h'
 
+# llms.txt (https://llmstxt.org), generated from layouts/index.llms.txt
+[outputFormats.llms]
+  mediaType = 'text/plain'
+  baseName = 'llms'
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ['html', 'rss', 'llms']

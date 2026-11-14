@@ -1,0 +1,53 @@
+{{- /* llms.txt (https://llmstxt.org): a plain-text map of the site for language models.
+       Built from the same content as the pages, so it stays current on every build. */ -}}
+# {{ site.Params.author }}
+
+> {{ site.Params.tagline }}
+
+{{ with .Params.about }}{{ . | plainify | strings.TrimSpace }}{{ end }}
+
+Skills: {{ delimit .Params.skills ", " }}.
+
+## Projects
+{{ with site.GetPage "/projects" }}{{ range sort .Pages "Params.weight" }}
+{{- $first := index (findRE `(?s)<p>.*?</p>` .Content 1) 0 | default "" }}
+- [{{ .Title }}]({{ .Permalink }}): {{ with .Description }}{{ . }}{{ else }}{{ $first | plainify | htmlUnescape | strings.TrimSpace }}{{ end }}{{ with .Params.tags_display }} ({{ . }}){{ end }}
+{{- range .Params.links }}{{ if .url }}
+  - {{ .label }}: {{ .url }}{{ end }}{{ end }}
+{{ end }}{{ end }}
+## Experience
+{{ with site.GetPage "/experience" }}{{ range .Params.experience }}
+- {{ .title }}, {{ .company }} ({{ .period }}): {{ .description | plainify | strings.TrimSpace }}
+{{- end }}
+
+Full page: {{ .Permalink }}
+{{ end }}
+## Writing
+{{ with site.GetPage "/posts" }}
+- [Writing]({{ .Permalink }}): articles on this site and on Medium
+{{- range where .Pages "Draft" false }}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ end }}
+{{- end }}{{ end }}
+{{- with try (resources.GetRemote "https://medium.com/feed/@sandakelum") }}{{ with .Value }}
+{{- $feed := . | transform.Unmarshal }}{{ range $feed.channel.item }}
+- [{{ .title }}]({{ index (split .link "?") 0 }}) ({{ (time.AsTime .pubDate).Format "2006-01-02" }}, Medium)
+{{- end }}{{ end }}{{ end }}
+- [Medium]({{ site.Params.medium }}): all articles
+
+## Contact
+
+- Email: {{ site.Params.email }}
+- GitHub: {{ site.Params.github }}
+- LinkedIn: {{ site.Params.linkedin }}
+- Contact page: {{ with site.GetPage "/contact" }}{{ .Permalink }}{{ end }}
+
+## Optional
+{{ with site.GetPage "/contributions" }}
+- [Open source contributions]({{ .Permalink }}): {{ .Description }}
+{{- end }}
+{{- with site.GetPage "/skills" }}
+- [Skills]({{ .Permalink }}): {{ .Description }}
+{{- end }}
+{{- range where site.RegularPages "Section" "apps" }}
+- [{{ .Title }}]({{ .Permalink }})
+{{- end }}
