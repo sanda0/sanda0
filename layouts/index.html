@@ -111,8 +111,45 @@
     font-size: 0.8rem;
   }
 
+  .featured-grid { display: grid; gap: 16px; }
+  .feature-card {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 18px;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    box-shadow: 4px 4px 0 var(--shadow, #000);
+    transition: transform 0.12s steps(2), box-shadow 0.12s steps(2), border-color 0.12s;
+  }
+  .feature-card:hover {
+    border-color: var(--moon, var(--accent));
+    box-shadow: 6px 6px 0 var(--accent);
+    transform: translate(-2px, -2px);
+  }
+  .feature-logo { flex-shrink: 0; box-shadow: none !important; display: block; line-height: 0; }
+  .feature-logo img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    box-shadow: 3px 3px 0 var(--shadow, #000);
+  }
+  .feature-card:hover .feature-logo img { border-color: var(--accent); }
+  .feature-body { min-width: 0; }
+  .feature-body h3 { font-size: 1rem; line-height: 1.3; }
+  .feature-body h3 a { box-shadow: none; }
+  .feature-tags { color: var(--accent); font-size: 0.75rem; margin-top: 4px; }
+  .feature-body p { margin-top: 8px; font-size: 0.9rem; }
+  .feature-links { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.82rem; }
+  .all-projects { display: inline-block; margin-top: 18px; font-size: 0.85rem; }
+  @media (prefers-reduced-motion: reduce) {
+    .feature-card, .feature-card:hover { transition: none; transform: none; }
+  }
+
   @media (max-width: 480px) {
-    .wrap { padding: 40px 18px 64px; }
+    .feature-card { padding: 14px; gap: 14px; }
+    .feature-logo img { width: 48px; height: 48px; }
     h1 { font-size: 1.6rem; }
   }
 </style>
@@ -143,6 +180,34 @@
     <h2>about</h2>
     <p>{{ .Params.about }}</p>
   </section>
+
+  {{- $featured := where (where site.RegularPages "Section" "projects") "Params.featured" true }}
+  {{- with $featured }}
+  <section id="featured">
+    <h2>featured projects</h2>
+    <div class="featured-grid">
+      {{- range sort . "Params.weight" }}
+      <article class="feature-card">
+        <a href="{{ .RelPermalink }}" class="feature-logo" aria-hidden="true" tabindex="-1">
+          <img src="{{ .Params.logo | relURL }}" alt="" width="64" height="64" loading="lazy">
+        </a>
+        <div class="feature-body">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <div class="feature-tags">{{ .Params.tags_display }}</div>
+          <p>{{ .Params.blurb | default .Summary }}</p>
+          <div class="feature-links">
+            <a href="{{ .RelPermalink }}">details →</a>
+            {{- range .Params.links }}{{ if .url }}
+            <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label | replaceRE "repository$" "" | strings.TrimSpace }}</a>
+            {{- end }}{{ end }}
+          </div>
+        </div>
+      </article>
+      {{- end }}
+    </div>
+    <a class="all-projects" href="{{ "projects/" | relURL }}">all projects →</a>
+  </section>
+  {{- end }}
 
   <section id="skills">
     <h2>skills</h2>
