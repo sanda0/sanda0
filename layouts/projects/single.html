@@ -26,13 +26,24 @@
   .meta { color: var(--accent); font-size: 0.85rem; margin-bottom: 16px; }
   .cover { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 24px; }
   .links { display: flex; gap: 16px; font-size: 0.9rem; margin-bottom: 40px; }
-  .content { color: #c9ccd1; }
+  .content { color: var(--text-soft); }
   .content p { max-width: 65ch; margin-bottom: 1.2em; }
   .content h2 { color: var(--accent); margin: 2em 0 0.6em; font-size: 1rem; }
   .content h3 { color: var(--text); margin: 1.5em 0 0.4em; font-size: 0.95rem; }
   .content code { background: var(--surface); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-size: 0.9em; }
   .content pre { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 16px; overflow-x: auto; margin-bottom: 1.2em; }
   .content pre code { background: none; border: none; padding: 0; }
+  .gallery-title { color: var(--accent); margin: 2em 0 0.8em; font-size: 1rem; }
+  .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .gallery a { display: block; box-shadow: none; }
+  .gallery a:last-child:nth-child(odd) { grid-column: 1 / -1; } /* odd count: last one full width */
+  .gallery img { display: block; width: 100%; height: auto; border: 2px solid var(--border); box-shadow: 4px 4px 0 var(--shadow, #000); transition: border-color 0.15s ease; }
+  .gallery a:hover img, .gallery a:focus-visible img { border-color: var(--moon, #fff); }
+  .lightbox { position: fixed; inset: 0; background: rgba(8, 11, 28, 0.94); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 10; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; border: 2px solid var(--border); }
+  .lightbox button { position: absolute; top: 12px; right: 16px; background: none; border: 0; color: var(--text); font: 1.6rem var(--mono); cursor: pointer; }
+  @media (max-width: 600px) { .gallery { grid-template-columns: 1fr; } }
   footer { border-top: 1px solid var(--border); padding-top: 24px; color: var(--muted); font-size: 0.8rem; margin-top: 64px; }
   @media (max-width: 480px) {
     .wrap { padding: 40px 18px 64px; }
@@ -40,6 +51,7 @@
     .links { flex-wrap: wrap; gap: 10px; }
   }
 </style>
+{{ partial "theme.html" . }}
 </head>
 <body>
 <div class="wrap">
@@ -62,6 +74,37 @@
   <div class="content">
     {{ .Content }}
   </div>
+
+  {{ with .Params.gallery }}
+  <h2 class="gallery-title">screenshots</h2>
+  <div class="gallery">
+    {{ range . }}{{ $alt := .alt }}{{ with resources.Get .src }}
+    {{ $thumb := .Resize "800x webp q80" }}{{ $full := .Resize "1600x webp q85" }}
+    <a href="{{ $full.RelPermalink }}" data-lightbox>
+      <img src="{{ $thumb.RelPermalink }}" alt="{{ $alt }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" loading="lazy">
+    </a>
+    {{ end }}{{ end }}
+  </div>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+    <button type="button" id="lightbox-close" aria-label="Close">✕</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+  <script>
+  (function () {
+    var box = document.getElementById('lightbox'), img = document.getElementById('lightbox-img');
+    function close() { box.classList.remove('open'); img.src = ''; }
+    document.querySelectorAll('[data-lightbox]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        img.src = a.href; img.alt = a.querySelector('img').alt;
+        box.classList.add('open');
+      });
+    });
+    box.addEventListener('click', function (e) { if (e.target !== img) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  })();
+  </script>
+  {{ end }}
 
   <footer>
     built with hugo — &copy; {{ now.Format "2006" }} Sandakelum

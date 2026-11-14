@@ -1,6 +1,6 @@
 baseURL = 'https://sandakelum.me/'
 locale = 'en-us'
-title = 'Sandakelum Priyamantha — Problem solver'
+title = 'Sandakelum Priyamantha — Software engineer & indie game dev'
 enableRobotsTXT = true
 
 [sitemap]
@@ -8,8 +8,8 @@ enableRobotsTXT = true
   priority = 0.5
 
 [params]
-  tagline = "Senior Software Engineer — high-performance backend systems & browser-to-OS integration."
-  description = "Software Engineer with 4+ years of experience in high-performance backend systems, IPC/RPC integrations, C++, Go, PHP/Laravel, and TypeScript."
+  tagline = "Senior Software Engineer & indie game developer — high-performance backend systems, browser-to-OS integration, and small games for mobile."
+  description = "Software Engineer with 5+ years of experience in high-performance backend systems, IPC/RPC integrations, C++, Go, PHP/Laravel, and TypeScript. Indie game developer making mobile games with Godot."
   author = "Sandakelum Priyamantha"
   email = "sandakelum.work@gmail.com"
   phone = "+94 76 943 8974"
@@ -27,3 +27,4 @@ enableRobotsTXT = true
   [caches.getresource]
     dir = ':cacheDir/:project'
     maxAge = '1h'
+
