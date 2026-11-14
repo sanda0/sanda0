@@ -66,6 +66,80 @@
     body::before { display: none; } /* would sit behind the header text */
   }
 
+  /* ---- background animation: all pixel-stepped, all outside the text column ---- */
+  :root {
+    --sky-mask: linear-gradient(to right, #000 calc(50% - 480px), transparent calc(50% - 420px), transparent calc(50% + 420px), #000 calc(50% + 480px));
+  }
+
+  /* the far star field drifts slowly, one 2px step at a time */
+  body::after { animation: star-drift 240s steps(160) infinite; }
+  @keyframes star-drift { to { background-position: -320px 0; } }
+
+  /* bright pixel stars twinkle on top of the field */
+  html::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("{{ "brand/twinkle.svg" | relURL }}") 90px 40px / 480px 480px;
+    image-rendering: pixelated;
+    pointer-events: none;
+    z-index: -2;
+    -webkit-mask-image: var(--sky-mask);
+            mask-image: var(--sky-mask);
+    animation: twinkle 4.8s steps(1) infinite;
+  }
+  @keyframes twinkle {
+    0%   { opacity: 0.9; }
+    20%  { opacity: 0.35; }
+    35%  { opacity: 1; }
+    60%  { opacity: 0.5; }
+    75%  { opacity: 0.15; }
+    85%  { opacity: 0.8; }
+  }
+
+  /* moon bobs by a pixel or two */
+  body::before { animation: moon-bob 6s steps(1) infinite; }
+  @keyframes moon-bob {
+    0%, 100% { transform: translateY(0); }
+    25%      { transform: translateY(-3px); }
+    50%      { transform: translateY(-6px); }
+    75%      { transform: translateY(-3px); }
+  }
+
+  /* a shooting star crosses the right-hand sky now and then */
+  html::after {
+    content: "";
+    position: fixed;
+    top: 210px;
+    left: calc(50% + 430px);
+    width: 36px;
+    height: 4px;
+    background: linear-gradient(to right, transparent 0 25%, var(--muted) 25% 50%, var(--moon) 50% 88%, var(--accent) 88%);
+    transform-origin: right center;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    animation: shooting-star 14s linear 3s infinite;
+  }
+  @keyframes shooting-star {
+    0%   { opacity: 0; transform: translate(0, 0) rotate(28deg); }
+    1%   { opacity: 1; }
+    7%   { opacity: 1; }
+    9%   { opacity: 0; transform: translate(170px, 90px) rotate(28deg); }
+    100% { opacity: 0; transform: translate(170px, 90px) rotate(28deg); }
+  }
+
+  @media (max-width: 960px) {
+    html::before { display: none; }
+  }
+  @media (max-width: 1280px) {
+    html::after { display: none; } /* not enough margin to fly through */
+  }
+  @media (prefers-reduced-motion: reduce) {
+    body::before, body::after, html::before, html::after { animation: none; }
+    html::after { display: none; }
+  }
+
   /* square, pixel-perfect corners everywhere */
   *, *::before, *::after { border-radius: 0 !important; }
 

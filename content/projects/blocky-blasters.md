@@ -3,6 +3,9 @@ title: "Blocky Blasters: Zombie Siege"
 tags_display: "godot · gdscript · android · admob"
 weight: 2
 image: "images/projects/blocky-blasters.png"
+featured: true
+logo: "images/projects/logos/blocky-blasters.png"
+blurb: "Blocky first-person shooter meets tower defense on Android. Build towers, survive the night."
 gallery:
   - src: "images/projects/blocky-blasters/screenshot-1.jpg"
     alt: "Village Defense: build towers"
