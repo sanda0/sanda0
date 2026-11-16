@@ -2,7 +2,7 @@
 
 **Software Engineer** based in Sri Lanka — I love turning ideas into real things.
 
-I build high-performance backend systems, IPC/RPC integrations between web and OS, and scalable multi-tenant applications.
+I build fast backends, browser extensions with native host apps, and small mobile games.
 
 🐱 Fun fact: I'm a certified cat lover.
 
