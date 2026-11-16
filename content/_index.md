@@ -1,4 +1,7 @@
 ---
+sitemap:
+  priority: 1.0
+  changefreq: weekly
 title: "Sandakelum Priyamantha | Software Engineer & Game Dev"
 description: "Software engineer with 5+ years building fast backends and IPC/RPC in C++, Go, Laravel and TypeScript. Indie game dev making mobile games in Godot."
 

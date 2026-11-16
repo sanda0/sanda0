@@ -1,4 +1,7 @@
 ---
+sitemap:
+  priority: 0.2
+  changefreq: yearly
 title: "Privacy Policy — Blocky Blasters"
 description: "Privacy policy for the Blocky Blasters Android game."
 ---

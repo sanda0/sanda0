@@ -1,4 +1,6 @@
 ---
+sitemap:
+  priority: 0.7
 title: "linodsync"
 tags_display: "go"
 links:

@@ -1,4 +1,6 @@
 ---
+sitemap:
+  priority: 0.7
 title: "VPS Pilot"
 tags_display: "go · react · rust"
 featured: true
