@@ -1,4 +1,6 @@
 ---
+sitemap:
+  priority: 0.7
 title: "json2docs"
 tags_display: "go"
 links:

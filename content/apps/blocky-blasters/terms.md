@@ -1,4 +1,7 @@
 ---
+sitemap:
+  priority: 0.2
+  changefreq: yearly
 title: "Terms of Service — Blocky Blasters"
 description: "Terms of service for the Blocky Blasters Android game."
 ---

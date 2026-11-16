@@ -2,6 +2,10 @@ baseURL = 'https://sandakelum.me/'
 locale = 'en-us'
 title = 'Sandakelum Priyamantha — Software Engineer & Game Dev'
 enableRobotsTXT = true
+enableGitInfo = true  # sitemap <lastmod> from each file's last commit
+
+# no taxonomies are used; skip the empty /tags/ and /categories/ pages
+disableKinds = ['taxonomy', 'term']
 
 [sitemap]
   changefreq = 'monthly'

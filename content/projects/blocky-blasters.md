@@ -1,4 +1,6 @@
 ---
+sitemap:
+  priority: 0.7
 title: "Blocky Blasters: Zombie Siege"
 tags_display: "godot · gdscript · android · admob"
 weight: 2

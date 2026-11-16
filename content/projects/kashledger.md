@@ -1,4 +1,6 @@
 ---
+sitemap:
+  priority: 0.7
 title: "KashLedger Accounting System"
 tags_display: "laravel · react · ts · mysql"
 links:
