@@ -6,9 +6,11 @@ title: "Privacy Policy — Blocky Blasters"
 description: "Privacy policy for the Blocky Blasters Android game."
 ---
 
-_Last updated: 8 November 2026_
+_Last updated: 19 November 2026_
 
-Blocky Blasters ("the game") is made by The Pixel Forge ("we").
+Made by Sandakelum
+
+Blocky Blasters ("the game") is made by Sandakelum ("we", "us").
 
 ## Summary
 

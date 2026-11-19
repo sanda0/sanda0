@@ -8,6 +8,8 @@ description: "Privacy policy for the Slide Knight Android puzzle game."
 
 _Last updated: 19 November 2026_
 
+Made by Sandakelum
+
 Slide Knight ("the game") is a puzzle game for Android made by Sandakelum ("we", "us"). This policy explains what information the game uses, why, and the choices you have.
 
 ## The short version
