@@ -20,6 +20,7 @@ disableKinds = ['taxonomy', 'term']
   whatsapp = "94769438974"  # digits only, used for wa.me links
   github = "https://github.com/sanda0"
   linkedin = "https://www.linkedin.com/in/sandakelum-priyamantha/"
+  googleplay = "https://play.google.com/store/apps/dev?id=8207677215730771804"
   medium = "https://medium.com/@sandakelum"
   rss = "https://medium.com/feed/@sandakelum"  # the writing feed; articles live on Medium
   twitter = ""
