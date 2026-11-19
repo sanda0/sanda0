@@ -4,6 +4,8 @@ sitemap:
 title: "Slide Knight"
 tags_display: "godot · gdscript · go · android · admob"
 weight: 3
+featured: true
+door: "games"
 image: "images/projects/slide-knight.png"
 logo: "images/projects/logos/slide-knight.png"
 blurb: "Pixel-art sliding puzzle game for Android. Swipe, slide until you hit a wall, reach the stairs in as few moves as you can."
