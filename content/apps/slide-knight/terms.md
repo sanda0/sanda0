@@ -8,9 +8,9 @@ description: "Terms of service for the Slide Knight Android puzzle game."
 
 _Last updated: 19 November 2026_
 
-Made by Sandakelum
+Developer: **Made By Sandakelum**
 
-These terms apply to Slide Knight ("the game"), a puzzle game for Android made by Sandakelum ("we", "us"). By downloading or playing the game you agree to them. If you do not agree, please do not use the game.
+These terms apply to Slide Knight ("the game"), a puzzle game for Android developed by Made By Sandakelum ("we", "us"). By downloading or playing the game you agree to them. If you do not agree, please do not use the game.
 
 ## The game
 

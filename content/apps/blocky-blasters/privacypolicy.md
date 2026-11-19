@@ -8,9 +8,9 @@ description: "Privacy policy for the Blocky Blasters Android game."
 
 _Last updated: 19 November 2026_
 
-Made by Sandakelum
+Developer: **Made By Sandakelum**
 
-Blocky Blasters ("the game") is made by Sandakelum ("we", "us").
+Blocky Blasters ("the game") is developed by Made By Sandakelum ("we", "us").
 
 ## Summary
 
