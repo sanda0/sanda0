@@ -45,4 +45,4 @@ Each chapter adds one idea and then mixes it with the ones before: coins and sta
 - Rewarded hints and undos with AdMob (consent flow included), interstitials capped and never before level 10, Remove Ads through Play Billing
 - Store screenshots and devlog videos recorded from the real game with Godot's Movie Maker
 
-[Privacy policy](/apps/slide-knight/privacypolicy/)
+[Privacy policy](/apps/slide-knight/privacypolicy/) · [Terms of service](/apps/slide-knight/terms/)
