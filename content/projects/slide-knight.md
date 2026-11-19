@@ -7,6 +7,10 @@ weight: 3
 image: "images/projects/slide-knight.png"
 logo: "images/projects/logos/slide-knight.png"
 blurb: "Pixel-art sliding puzzle game for Android. Swipe, slide until you hit a wall, reach the stairs in as few moves as you can."
+video: "videos/slide-knight-trailer.mp4"
+video_poster: "images/projects/slide-knight/trailer-poster.png"
+links:
+  - label: "google play: coming soon"
 gallery_portrait: true
 gallery:
   - src: "images/projects/slide-knight/screenshot-1.png"
