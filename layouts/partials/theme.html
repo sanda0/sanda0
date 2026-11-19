@@ -1,6 +1,6 @@
 {{- /*
   Brand theme: "Sandakelum" = moonlight. Navy night, moon-cream text, one orange accent,
-  pixel headings, square corners, a pixel moon. Included last in every <head>,
+  pixel headings, square corners. Included last in every <head>,
   so these tokens and rules override each page's own inline <style>.
   Brand assets in /static/brand/ come from pixelforge/brand (bash src/render.sh -> out/web/).
 */ -}}
@@ -28,39 +28,6 @@
 
   html { background-color: var(--bg); }
   body { background: transparent !important; }
-
-  /* pixel moon, top right, behind the content */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 28px;
-    right: 32px;
-    width: 144px;
-    height: 144px;
-    background: url("{{ "brand/moon.svg" | relURL }}") center / contain no-repeat;
-    image-rendering: pixelated;
-    pointer-events: none;
-    z-index: -1;
-  }
-  @media (max-width: 1100px) {
-    body::before { width: 96px; height: 96px; top: 16px; right: 16px; opacity: 0.55; }
-  }
-  @media (max-width: 960px) {
-    body::before { display: none; } /* would sit behind the header text */
-  }
-
-  /* ---- the moon bobs by a pixel or two ---- */
-  body::before { animation: moon-bob 6s steps(1) infinite; }
-  @keyframes moon-bob {
-    0%, 100% { transform: translateY(0); }
-    25%      { transform: translateY(-3px); }
-    50%      { transform: translateY(-6px); }
-    75%      { transform: translateY(-3px); }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    body::before { animation: none; }
-  }
 
   /* square, pixel-perfect corners everywhere */
   *, *::before, *::after { border-radius: 0 !important; }
