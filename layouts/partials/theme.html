@@ -1,6 +1,6 @@
 {{- /*
   Brand theme: "Sandakelum" = moonlight. Navy night, moon-cream text, one orange accent,
-  pixel headings, square corners, pixel stars and moon. Included last in every <head>,
+  pixel headings, square corners, a pixel moon. Included last in every <head>,
   so these tokens and rules override each page's own inline <style>.
   Brand assets in /static/brand/ come from pixelforge/brand (bash src/render.sh -> out/web/).
 */ -}}
@@ -29,23 +29,6 @@
   html { background-color: var(--bg); }
   body { background: transparent !important; }
 
-  /* stars only in the side margins: masked out over the 720px text column */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("{{ "brand/stars.svg" | relURL }}") 0 0 / 320px 320px;
-    image-rendering: pixelated;
-    pointer-events: none;
-    z-index: -2;
-    --clear: 420px; /* half the column + a little breathing room */
-    -webkit-mask-image: linear-gradient(to right, #000 calc(50% - var(--clear) - 60px), transparent calc(50% - var(--clear)), transparent calc(50% + var(--clear)), #000 calc(50% + var(--clear) + 60px));
-            mask-image: linear-gradient(to right, #000 calc(50% - var(--clear) - 60px), transparent calc(50% - var(--clear)), transparent calc(50% + var(--clear)), #000 calc(50% + var(--clear) + 60px));
-  }
-  @media (max-width: 960px) {
-    body::after { display: none; } /* the text column fills the screen: no stars */
-  }
-
   /* pixel moon, top right, behind the content */
   body::before {
     content: "";
@@ -66,26 +49,7 @@
     body::before { display: none; } /* would sit behind the header text */
   }
 
-  /* ---- background: static stars and a bobbing moon, all outside the text column ---- */
-  :root {
-    --sky-mask: linear-gradient(to right, #000 calc(50% - 480px), transparent calc(50% - 420px), transparent calc(50% + 420px), #000 calc(50% + 480px));
-  }
-
-  /* bright pixel stars on top of the field (static) */
-  html::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("{{ "brand/twinkle.svg" | relURL }}") 90px 40px / 480px 480px;
-    image-rendering: pixelated;
-    pointer-events: none;
-    z-index: -2;
-    -webkit-mask-image: var(--sky-mask);
-            mask-image: var(--sky-mask);
-    opacity: 0.9;
-  }
-
-  /* moon bobs by a pixel or two */
+  /* ---- the moon bobs by a pixel or two ---- */
   body::before { animation: moon-bob 6s steps(1) infinite; }
   @keyframes moon-bob {
     0%, 100% { transform: translateY(0); }
@@ -94,9 +58,6 @@
     75%      { transform: translateY(-3px); }
   }
 
-  @media (max-width: 960px) {
-    html::before { display: none; }
-  }
   @media (prefers-reduced-motion: reduce) {
     body::before { animation: none; }
   }
