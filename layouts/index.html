@@ -139,9 +139,10 @@
   .trust { margin-top: 16px; font-size: 0.78rem; color: var(--muted); }
 
   /* personal projects: two doors */
-  .doors { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  /* one row per door (software, then games), its cards side by side */
+  .doors { display: flex; flex-direction: column; gap: 32px; }
   .door { display: flex; flex-direction: column; gap: 12px; }
-  .door-head { min-height: 4.6em; }
+  .door-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .door-title { display: block; font-family: var(--pixel, var(--mono)); font-size: 0.9rem; color: var(--accent); }
   .door-line { display: block; margin-top: 4px; font-size: 0.82rem; color: var(--muted); }
   .feature-card {
@@ -188,8 +189,7 @@
   .prompts { margin-top: 12px; font-size: 0.9rem; }
 
   @media (max-width: 640px) {
-    .doors { grid-template-columns: 1fr; }
-    .door-head { min-height: 0; }
+    .door-cards { grid-template-columns: 1fr; }
   }
   @media (prefers-reduced-motion: reduce) {
     .btn, .btn:hover, .feature-card, .feature-card:hover { transition: none; transform: none; }
@@ -246,6 +246,7 @@
           <span class="door-title">&gt; {{ $key }}</span>
           <span class="door-line">{{ .line }}</span>
         </div>
+        <div class="door-cards">
         {{- range sort (where (where $projects "Params.featured" true) "Params.door" $key) "Params.weight" }}
         <article class="feature-card">
           <div class="feature-top">
@@ -268,6 +269,7 @@
           </div>
         </article>
         {{- end }}
+        </div>
       </div>
       {{- end }}
     </div>
