@@ -139,10 +139,10 @@
   .trust { margin-top: 16px; font-size: 0.78rem; color: var(--muted); }
 
   /* personal projects: two doors */
-  /* one row per door (software, then games), its cards side by side */
+  /* software, then games; one project per row */
   .doors { display: flex; flex-direction: column; gap: 32px; }
   .door { display: flex; flex-direction: column; gap: 12px; }
-  .door-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .door-cards { display: flex; flex-direction: column; gap: 16px; }
   .door-title { display: block; font-family: var(--pixel, var(--mono)); font-size: 0.9rem; color: var(--accent); }
   .door-line { display: block; margin-top: 4px; font-size: 0.82rem; color: var(--muted); }
   .feature-card {
@@ -189,7 +189,6 @@
   .prompts { margin-top: 12px; font-size: 0.9rem; }
 
   @media (max-width: 640px) {
-    .door-cards { grid-template-columns: 1fr; }
   }
   @media (prefers-reduced-motion: reduce) {
     .btn, .btn:hover, .feature-card, .feature-card:hover { transition: none; transform: none; }
