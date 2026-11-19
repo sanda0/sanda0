@@ -223,15 +223,19 @@
     </nav>
 
     {{- $projects := where site.RegularPages "Section" "projects" }}
-    {{- $game := index (where $projects "Params.door" "games") 0 }}
+    {{- /* "play my game": the first game (by weight) whose Google Play link is live */}}
+    {{- $play := "" }}
+    {{- range sort (where $projects "Params.door" "games") "Params.weight" }}{{ if not $play }}
+      {{- with .Params.links }}{{ with index (where . "label" "google play") 0 }}{{ with .url }}{{ $play = . }}{{ end }}{{ end }}{{ end }}
+    {{- end }}{{ end }}
     <div class="hero">
       <p class="hero-line">{{ delimit .Params.hero "<br>" | safeHTML }} <span class="hl">{{ .Params.hero_hl }}</span></p>
       <p class="tagline">{{ .Site.Params.tagline }}</p>
       <div class="actions">
         <a class="btn btn-primary" href="#projects">see my projects</a>
-        {{- with $game }}{{ with index (where .Params.links "label" "google play") 0 }}
-        <a class="btn" href="{{ .url }}" target="_blank" rel="noopener">play my game</a>
-        {{- end }}{{ end }}
+        {{- with $play }}
+        <a class="btn" href="{{ . }}" target="_blank" rel="noopener">play my game</a>
+        {{- end }}
       </div>
       <p class="trust">{{ delimit .Params.trust " · " }}</p>
     </div>

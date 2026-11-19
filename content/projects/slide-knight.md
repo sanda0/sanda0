@@ -3,7 +3,7 @@ sitemap:
   priority: 0.7
 title: "Slide Knight"
 tags_display: "godot · gdscript · go · android · admob"
-weight: 3
+weight: 2
 featured: true
 door: "games"
 image: "images/projects/slide-knight.png"

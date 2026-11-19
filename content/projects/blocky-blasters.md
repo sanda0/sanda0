@@ -3,7 +3,7 @@ sitemap:
   priority: 0.7
 title: "Blocky Blasters: Zombie Siege"
 tags_display: "godot · gdscript · android · admob"
-weight: 2
+weight: 3
 image: "images/projects/blocky-blasters.png"
 featured: true
 door: "games"
