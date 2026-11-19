@@ -227,7 +227,7 @@
       <p class="hero-line">{{ delimit .Params.hero "<br>" | safeHTML }} <span class="hl">{{ .Params.hero_hl }}</span></p>
       <p class="tagline">{{ .Site.Params.tagline }}</p>
       <div class="actions">
-        <a class="btn btn-primary" href="#projects">see my projects</a>
+        <a class="btn btn-primary" href="{{ "projects/" | relURL }}">see my projects</a>
         {{- with site.Params.googleplay }}
         <a class="btn" href="{{ . }}" target="_blank" rel="noopener">play my games</a>
         {{- end }}
