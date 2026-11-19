@@ -26,6 +26,8 @@
   .meta { color: var(--accent); font-size: 0.85rem; margin-bottom: 16px; }
   .cover { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 24px; }
   .links { display: flex; gap: 16px; font-size: 0.9rem; margin-bottom: 40px; }
+  .links .soon { color: var(--muted); border: 1px dashed var(--border); padding: 0 6px; }
+  .trailer { display: block; width: 100%; height: auto; border: 2px solid var(--border); box-shadow: 4px 4px 0 var(--shadow, #000); background: #000; }
   .content { color: var(--text-soft); }
   .content p { max-width: 65ch; margin-bottom: 1.2em; }
   .content h2 { color: var(--accent); margin: 2em 0 0.6em; font-size: 1rem; }
@@ -70,6 +72,8 @@
   <div class="links">
     {{ range .Params.links }}{{ if .url }}
     <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
+    {{ else if .label }}
+    <span class="soon">{{ .label }}</span>
     {{ end }}{{ end }}
   </div>
   {{ end }}
@@ -77,6 +81,13 @@
   <div class="content">
     {{ .Content }}
   </div>
+
+  {{ with .Params.video }}
+  <h2 class="gallery-title">trailer</h2>
+  <video class="trailer" controls playsinline preload="none"{{ with $.Params.video_poster }}{{ with resources.Get . }}{{ $p := .Process "webp q80" }} poster="{{ $p.RelPermalink }}" width="{{ $p.Width }}" height="{{ $p.Height }}"{{ end }}{{ end }}>
+    <source src="{{ . | relURL }}" type="video/mp4">
+  </video>
+  {{ end }}
 
   {{ with .Params.gallery }}
   <h2 class="gallery-title">screenshots</h2>
